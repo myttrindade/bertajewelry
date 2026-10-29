@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Berta Jewelry — Alianças e Joias Personalizadas | Santos</title>
-<meta name="description" content="Berta Jewelry: alianças e joias personalizadas em Santos. Empresa familiar há 15 anos no ramo de joias e semijoias, no Super Centro Boqueirão.">
-<meta name="theme-color" content="#0f4a3f">
+<title>Berta Jewelry — Alta Joalheria Personalizada | Santos</title>
+<meta name="description" content="Berta Jewelry: alianças, anéis e pingentes desenhados sob medida em Santos. Do desenho em 3D à joia pronta, com gravações, pedras de nascimento e atendimento exclusivo.">
+<meta name="theme-color" content="#0a2e27">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Berta Jewelry">
 <meta property="og:url" content="https://bertajewelry.vercel.app/">
-<meta property="og:title" content="Berta Jewelry — Alianças e Joias Personalizadas em Santos">
-<meta property="og:description" content="Empresa familiar há 15 anos. Alianças, anéis, pingentes com nome e peças sob medida no Super Centro Boqueirão, Santos.">
+<meta property="og:title" content="Berta Jewelry — Joias feitas para uma só história">
+<meta property="og:description" content="Alianças, anéis e pingentes desenhados sob medida em Santos. Monte a sua joia no Atelier Berta.">
 <meta property="og:image" content="https://bertajewelry.vercel.app/fotos/anel-trevo.jpg">
 <meta property="og:image:width" content="1080">
 <meta property="og:image:height" content="1080">
@@ -20,688 +20,842 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="fotos/aliancas-ouro.jpg" fetchpriority="high">
 <style>
 :root{
-  --bg:#f5f0e6; --ink:#10211d; --mute:#5a6560; --line:#e2dccf;
-  --sand:#efeae1; --stone:#e7e0d4; --gold:#0f4a3f; --em:#0f4a3f; --em-d:#0b2f29;
-  --serif:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif; --sans:var(--serif);
+  --ivory:#f7f3ec; --paper:#fbf9f5; --sand:#ece4d6; --stone:#e3dacb;
+  --ink:#14201c; --text:#2b3330; --mute:#6c726e; --line:rgba(20,32,28,.14);
+  --em:#0f4a3f; --em-d:#0a2e27; --em-dd:#061d18;
+  --gold:#a8844c; --gold-l:#d9c49b;
+  --serif:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+  --script:'Pinyon Script','Snell Roundhand',cursive;
+  --g:clamp(20px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{font-family:var(--sans);font-weight:400;font-size:1.12rem;color:#1d2b27;background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;font-size:1rem;line-height:1.75;color:var(--text);background:var(--ivory);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
 img,video{display:block;max-width:100%}
-.up{text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:500}
+::selection{background:var(--em);color:var(--ivory)}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
 
-.top{background:#efe7d9;color:#0f4a3f;text-align:center;padding:9px 16px}
-header{position:fixed;left:0;right:0;top:0;z-index:100;background:transparent;border-bottom:1px solid transparent;transition:background .35s,border-color .35s;animation:fadeIn .9s 1.7s both}
-header.s{background:rgba(245,240,230,.96);backdrop-filter:blur(10px);border-color:var(--line)}
-header:not(.s) .bar a,header:not(.s) .logo{color:#f3ecdf}
-header:not(.s) .logo small{color:rgba(243,236,223,.8)}
-header:not(.s) .bar nav a::after,header:not(.s) .bar .r a::after{background:#f3ecdf}
-header:not(.s) .burger::before,header:not(.s) .burger::after{background:#f3ecdf}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;padding:0 28px}
-.bar nav{display:flex;gap:26px}
-.bar nav a,.bar .r a{position:relative;white-space:nowrap}
-.bar nav a::after,.bar .r a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s}
-.bar nav a:hover::after,.bar .r a:hover::after{transform:scaleX(1)}
-.logo{font-family:var(--serif);font-size:1.7rem;letter-spacing:.32em;text-indent:.32em;text-align:center;line-height:1}
-.logo small{display:block;font-family:var(--sans);font-size:.48rem;letter-spacing:.7em;text-indent:.7em;margin-top:4px;color:var(--mute)}
-.bar .r{display:flex;gap:24px;justify-content:flex-end}
-.burger{display:none;background:none;border:0;cursor:pointer;width:28px;height:18px;position:relative}
-.burger::before,.burger::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--ink)}
-.burger::before{top:4px}.burger::after{bottom:4px}
+.w{width:min(1320px,100% - 2*var(--g));margin-inline:auto}
+.eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5.2vw,4.6rem);line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+.h2 em{font-style:italic;color:var(--em)}
+.lead{font-size:1.08rem;color:var(--mute);max-width:46ch}
+.sec-head{display:grid;gap:20px;margin-bottom:clamp(44px,6vw,80px)}
+.sec-head.split{grid-template-columns:1fr auto;align-items:end;gap:20px 60px}
+.sec-head.center{text-align:center;justify-items:center}
+.rule{display:block;width:56px;height:1px;background:var(--gold)}
 
-.btn{display:inline-block;padding:15px 34px;border:1px solid var(--em);background:var(--em);color:#efe7d9;cursor:pointer;transition:.35s}
-.btn:hover{background:transparent;color:var(--em)}
-.btn.ghost{background:transparent;color:var(--em)}
-.btn.ghost:hover{background:var(--em);color:#efe7d9}
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:19px 36px;background:var(--em);color:var(--ivory);border:1px solid var(--em);font-size:.7rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;transition:background .45s var(--ease),color .45s var(--ease),border-color .45s var(--ease)}
+.btn:hover{background:var(--em-dd);border-color:var(--em-dd)}
+.btn.light{background:var(--ivory);color:var(--em-d);border-color:var(--ivory)}
+.btn.light:hover{background:var(--gold-l);border-color:var(--gold-l)}
+.link{position:relative;display:inline-block;font-size:.7rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;padding-bottom:6px;color:var(--ink)}
+.link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform-origin:right;transition:transform .6s var(--ease)}
+.link:hover::after{transform:scaleX(0)}
 
-/* hero 3D */
-.hero{position:relative;padding:0;margin:0;height:100svh;min-height:640px;display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;background:#efe7d9}
-.hl{position:relative;overflow:hidden;background:#e6dccb;border-right:3px solid #efe7d9;clip-path:inset(100% 0 0 0);animation:revealUp 1.2s .15s cubic-bezier(.7,0,.2,1) forwards}
-@keyframes revealUp{to{clip-path:inset(0)}}
-.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;transform:scale(1.06);animation:slowzoom 18s ease-out forwards}
-@keyframes slowzoom{to{transform:scale(1)}}
-.hl::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,28,24,.55),transparent 26%,transparent 68%,rgba(10,28,24,.5));z-index:1}
-.est{position:absolute;left:28px;bottom:26px;z-index:3;color:#fbf7ef;text-shadow:0 1px 14px rgba(0,0,0,.5)}
-.hr{--m:min(26vw,45vh);position:relative;overflow:hidden;clip-path:inset(0 0 100% 0);animation:revealDown 1.2s .15s cubic-bezier(.7,0,.2,1) forwards;background:radial-gradient(ellipse at 50% 38%,#2b7b6c 0%,#185a4e 55%,#0f4339 100%);perspective:1200px}
-.medal-wrap{position:absolute;left:50%;top:39%;width:var(--m);aspect-ratio:1;transform:translate(-50%,-50%);animation:floaty 7s ease-in-out infinite}
-@keyframes revealDown{to{clip-path:inset(0)}}
-@keyframes floaty{50%{transform:translate(-50%,calc(-50% - 12px))}}
-.medal-wrap::before{content:"";position:absolute;inset:-26px;border:1px solid rgba(239,231,217,.45);border-radius:50%}
-.medal-wrap::after{content:"";position:absolute;left:8%;right:8%;bottom:-13%;height:8%;background:radial-gradient(ellipse,rgba(0,0,0,.4),transparent 70%);filter:blur(6px);z-index:-1}
-.medal{animation:pop 1.3s 1s cubic-bezier(.2,.7,.2,1) both;width:100%;height:100%;border-radius:50%;background:url(fotos/anel-trevo.jpg) center/cover;box-shadow:0 26px 50px -18px rgba(0,0,0,.5),0 0 0 10px #efe7d9;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));position:relative;will-change:transform}
-.medal::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.3),transparent 46%)}
-.mk{position:absolute;right:5%;bottom:6%;z-index:5;display:flex;flex-direction:column;align-items:flex-end;gap:12px;color:#efe7d9}
-.mark{font-family:var(--serif);font-weight:400;font-size:clamp(4rem,10.5vw,11.5rem);line-height:.8;letter-spacing:.01em;color:#efe7d9}
-.kick{color:#c7dcd3}
-@keyframes pop{from{opacity:0;scale:.55}to{opacity:1;scale:1}}
-@keyframes rise{from{transform:translateY(115%)}to{transform:none}}
-.mark{overflow:hidden;padding-bottom:.06em}
-.mark span{display:inline-block;transform:translateY(115%);animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(1.1s + var(--i)*.09s)}
-.kick,.cta,.est{opacity:0;animation:fadeIn .9s 2s forwards}
-.cta{border-bottom:1px solid #efe7d9;padding-bottom:3px;color:#efe7d9;transition:.3s}
-.cta:hover{opacity:.7}
-.hint{position:absolute;z-index:10;right:22px;bottom:18px;color:#7a7266;pointer-events:none}
-
-/* categorias */
-.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px}
-.tile{position:relative;overflow:hidden;background:var(--sand);display:block;perspective:900px}
-.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.06);will-change:transform}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(20,18,16,.45));pointer-events:none}
-.tile .lbl{position:absolute;z-index:2;left:22px;right:22px;bottom:18px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end}
-.tile .lbl b{font-weight:400}
-.cats .tile{aspect-ratio:4/5.2}
-
-.strip{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);margin:80px 0 0}
-.strip div{padding:34px 28px;border-right:1px solid var(--line)}
-.strip div:last-child{border:0}
-.strip h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin-bottom:4px}
-.strip p{color:var(--mute);font-size:.9rem}
-
-section{padding:110px 0}
-.w{width:min(1240px,100% - 56px);margin-inline:auto}
-.sec-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px;gap:24px;flex-wrap:wrap}
-.sec-h h2,.panel h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.05}
-.sec-h h2 em{font-style:italic;color:var(--gold);font-weight:400}
-.sec-h p{color:var(--mute);max-width:380px}
-
-/* galeria 3D */
-.stage{display:grid;grid-template-columns:1.3fr 1fr;margin:6px}
-.viewer{position:relative;min-height:min(80vh,720px);background:radial-gradient(ellipse at 50% 45%,#fff8f1,#ecd9cd 78%);cursor:grab;touch-action:pan-y;overflow:hidden}
-.viewer:active{cursor:grabbing}
-.viewer canvas{display:block;width:100%;height:100%}
-.viewer .nav{position:absolute;z-index:5;top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid var(--ink);background:rgba(246,243,238,.8);cursor:pointer;display:grid;place-items:center;transition:.3s}
-.viewer .nav:hover{background:var(--em);color:#efe7d9}
-.viewer .nav.l{left:18px}.viewer .nav.r{right:18px}
-.viewer .hint{left:0;right:0;text-align:center}
-.panel{background:#fffcf7;padding:clamp(28px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
-.panel h2{margin:14px 0 18px;min-height:2.1em}
-.panel .d{color:#5c564d;min-height:5.4em;margin-bottom:22px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
-.chip{padding:9px 14px;border:1px solid var(--line);background:none;cursor:pointer;transition:.3s}
-.chip:hover{border-color:var(--ink)}
-.chip.on{background:var(--em);color:#efe7d9;border-color:var(--em)}
-
-/* desenho -> joia */
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:6px}
-.flow .tile{aspect-ratio:1}
-.flow .tile::after{background:linear-gradient(transparent 70%,rgba(20,18,16,.5))}
-
-/* videos */
-.vids{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px}
-.vids .tile{aspect-ratio:1;background:#000}
-.vids video{width:100%;height:100%;object-fit:cover}
-.vids .tile::after{display:none}
-.vids .lbl{text-shadow:0 1px 12px rgba(0,0,0,.5)}
-
-/* vídeos e loja: cada um na sua seção */
-#videos{padding-bottom:140px}
-.store{background:var(--stone);padding:120px 0}
-.store h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.05}
-.store h2 em{font-style:italic;color:var(--gold);font-weight:400}
-.store .sec-h p{color:#4d473f}
-.store-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;align-items:stretch}
-.store figure{display:flex;flex-direction:column;gap:12px}
-.store .ph{aspect-ratio:4/5;overflow:hidden;background:var(--sand)}
-.store .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.store figure:hover .ph img{transform:scale(1.05)}
-.store figcaption{color:#2b2620}
-.store-info{background:var(--bg);padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;justify-content:center;gap:12px}
-.store-info h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,2.4vw,2.2rem);line-height:1.15}
-.store-info p{color:#4d473f}
-.store-info .btn{align-self:flex-start;margin-top:8px}
-
-.insta .row{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.insta .row a{aspect-ratio:1;overflow:hidden;display:block}
-.insta .row img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.insta .row a:hover img{transform:scale(1.08)}
-
-.contact{background:var(--em-d);color:#efe9de}
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:90px}
-.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4.6vw,4rem);line-height:1;margin:16px 0 22px}
-.contact h2 em{font-style:italic;color:#cfe8df}
-.contact p{color:#a79f93;max-width:420px}
-.contact ul{list-style:none;margin-top:36px}
-.contact li{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid #35302a;color:#cfc7ba}
-.contact li span:first-child{color:#8b8377}
-form{display:grid;gap:16px;align-content:start}
-input,textarea{width:100%;background:none;border:0;border-bottom:1px solid #4a443c;padding:15px 0;color:#efe9de;font:inherit;outline:none;border-radius:0;transition:.3s}
-input:focus,textarea:focus{border-color:#cfe8df}
-input::placeholder,textarea::placeholder{color:#7e766a}
-textarea{min-height:110px;resize:vertical}
-form .btn{justify-self:start;background:#efe9de;color:var(--ink);border-color:#efe9de;margin-top:8px}
-form .btn:hover{background:transparent;color:#efe9de}
-footer{background:#082520;color:#7e766a;border-top:1px solid #2b2620;text-align:center;padding:30px 16px}
-
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-
-/* abaixo da capa: texto e índice, sem imagens */
-.intro{padding:110px 0 100px;background:var(--bg)}
-.manifesto{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.7vw,3.3rem);line-height:1.22;max-width:980px;margin:0 auto 70px;text-align:center;color:var(--ink)}
-.manifesto em{font-style:italic;color:var(--em)}
-.index{list-style:none;max-width:1000px;margin:0 auto;border-top:1px solid var(--ink)}
-.index li{border-bottom:1px solid var(--line)}
-.index a{display:grid;grid-template-columns:70px 1.1fr 1.3fr 40px;align-items:center;gap:20px;padding:26px 10px;transition:background .35s,color .35s,padding .35s}
-.index .n{color:var(--mute)}
-.index .t{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.1}
-.index .d{color:var(--mute);font-size:1rem}
-.index .a{font-size:1.5rem;text-align:right;transition:transform .35s}
-.index a:hover{background:var(--em);color:#efe7d9;padding-left:26px;padding-right:26px}
-.index a:hover .d,.index a:hover .n{color:#bcd8cf}
-.index a:hover .a{transform:translateX(6px)}
-
-.band{background:var(--em);color:#efe7d9}
-.band .w{display:grid;grid-template-columns:repeat(4,1fr)}
-.band .w>div{padding:42px 28px;border-right:1px solid rgba(246,239,227,.2)}
-.band .w>div:last-child{border:0}
-.band b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1;margin-bottom:8px}
-.band span{color:#bcd8cf;font-size:1rem}
-
-/* galeria 3D em largura total */
-.gal{padding:100px 0 90px;background:#faf6ee}
-.viewer{margin:0;min-height:0;height:min(60vh,560px);background:#faf6ee}
-.gal-info{text-align:center;max-width:760px;margin:14px auto 0;padding:0 28px}
-.gal-info h3{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,3.4vw,3rem);margin:8px 0 10px;line-height:1.1}
-.gal-info .d{color:#4a5550;min-height:4.6em;margin-bottom:22px}
-.gal-info .chips{justify-content:center}
-
-/* imagens menores e organizadas */
-#projeto{padding:100px 0;background:var(--bg)}
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:960px;margin:0 auto 18px}
-.flow .tile{aspect-ratio:1}
-#videos{padding:20px 0 100px;background:var(--bg)}
-.vids{display:flex;justify-content:center;gap:18px;margin:0 auto;padding:0 28px;flex-wrap:wrap}
-.vids .tile{height:520px;aspect-ratio:auto;background:#000}
-.vids .tile:nth-child(1){width:292px}
-.vids .tile:nth-child(2){width:520px}
-.store{background:#faf6ee;padding:100px 0;border-top:1px solid var(--line)}
-.store-grid{grid-template-columns:1fr 280px 280px;gap:22px;align-items:start}
-.store .ph{aspect-ratio:3/4}
-.store-info{background:transparent;padding:0 24px 0 0;justify-content:flex-start}
-
-/* menu: compacto em telas médias, hambúrguer quando não cabe ao lado do logo */
-@media(max-width:1440px){.bar nav{gap:18px}.bar .r{gap:18px}.bar nav,.bar .r{font-size:.7rem;letter-spacing:.12em}}
-@media(max-width:1260px){
-  header.s{backdrop-filter:none}
-  header .bar nav.open a{color:var(--ink)!important}
-  .bar{grid-template-columns:auto 1fr auto;padding:0 18px}
-  .bar nav{position:fixed;inset:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:26px;font-size:.9rem;opacity:0;visibility:hidden;transition:.4s;z-index:-1}
-  .bar nav.open{opacity:1;visibility:visible}
-  .burger{display:block;order:-1}
-  .bar .r a:not(:last-child){display:none}
-}
-@media(max-width:960px){
-  .cats{grid-template-columns:repeat(2,1fr)}
-  .stage,.cg,.store-grid{grid-template-columns:1fr}
-  .store{padding:84px 0}
-  .cg{gap:50px}
-  .strip{grid-template-columns:repeat(2,1fr)}
-  .strip div:nth-child(2){border-right:0}
-  .strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .insta .row{grid-template-columns:repeat(3,1fr)}
-  .vids{grid-template-columns:1fr}
-  .hero{grid-template-columns:1fr;grid-template-rows:44% 56%;height:max(760px,calc(100svh - 36px))}
-  .hr{--m:min(38vw,24vh)}
-  .medal-wrap{top:33%}
-  .hl{border-right:0;border-bottom:3px solid #efe7d9}
-  .mk{right:0;left:0;align-items:center;bottom:4%}
-  .mark{font-size:clamp(4rem,24vw,9rem)}
-  .est{left:18px;bottom:16px}
-  .viewer{min-height:460px}
-  section{padding:80px 0}
-}
-@media(max-width:520px){.flow{grid-template-columns:1fr}.tile .lbl{left:14px;right:14px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation-duration:.01ms!important;animation-delay:0s!important}.rv{opacity:1;transform:none}}
-@media(max-width:960px){
-  .hero{height:100svh;min-height:720px}
-  .index a{grid-template-columns:44px 1fr 30px}.index .d{display:none}
-  .band .w{grid-template-columns:repeat(2,1fr)}
-  .band .w>div:nth-child(2){border-right:0}
-  .band .w>div:nth-child(-n+2){border-bottom:1px solid rgba(246,239,227,.2)}
-  .viewer{height:420px}
-  .flow{grid-template-columns:repeat(3,1fr);gap:8px}
-  .vids .tile{height:420px}.vids .tile:nth-child(1){width:236px}.vids .tile:nth-child(2){width:100%;max-width:420px}
-  .store-grid{grid-template-columns:1fr 1fr}.store-info{grid-column:1/-1;padding:0}
-  .gal{padding:80px 0 70px}.intro{padding:80px 0}
-}
-@media(max-width:520px){.flow{grid-template-columns:1fr 1fr}.flow .tile:nth-child(3){grid-column:1/-1}
-  .band .w>div{padding:28px 16px}.band b{font-size:1.6rem}.band span{font-size:.88rem;line-height:1.4;display:block}}
-
-/* ===== intro cinematográfica ===== */
+/* ===== intro curta ===== */
+#intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:var(--em-d);color:var(--ivory);transition:transform .9s cubic-bezier(.76,0,.24,1);cursor:pointer}
+#intro.out{transform:translateY(-100%)}
+#intro .mono{text-align:center}
+#intro .mono b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:.42em;text-indent:.42em;line-height:1;animation:inMono 1s var(--ease) both}
+#intro .mono i{display:block;width:120px;height:1px;margin:22px auto 0;background:var(--gold-l);transform:scaleX(0);animation:inLine .9s .2s var(--ease) forwards}
+@keyframes inMono{from{opacity:0;letter-spacing:.7em;text-indent:.7em}to{opacity:1}}
+@keyframes inLine{to{transform:scaleX(1)}}
 body.intro-on{overflow:hidden}
-body.intro-on header,body.intro-on .hl,body.intro-on .hl img,body.intro-on .hr,body.intro-on .medal,body.intro-on .medal-wrap,body.intro-on .mark span,body.intro-on .kick,body.intro-on .cta,body.intro-on .est{animation-play-state:paused}
-#intro{position:fixed;inset:0;z-index:1000;background:#04100d;color:#efe7d9;overflow:hidden;transition:transform 1.15s cubic-bezier(.77,0,.18,1)}
-#intro.out{transform:translateY(-101%)}
-#intro .sc{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
-#intro .sc.on{opacity:1}
-#intro .sc img{width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
-#intro .sc.seen img{animation:kb 4.2s cubic-bezier(.3,.1,.3,1) forwards}
-@keyframes kb{from{transform:scale(1.22) translate(var(--x0),var(--y0))}to{transform:scale(1.05) translate(var(--x1),var(--y1))}}
-#intro .sc::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(5,30,25,.5),rgba(5,30,25,.12) 40%,rgba(5,30,25,.6))}
-.in-vig{position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse at center,transparent 42%,rgba(0,0,0,.62))}
-.in-grain{position:absolute;inset:-50%;z-index:4;opacity:.17;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain .7s steps(6) infinite}
-@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,5%)}80%{transform:translate(6%,2%)}100%{transform:translate(0,0)}}
-#intro .bar{position:absolute;left:0;right:0;background:#000;z-index:6;height:50.5vh;transition:height 1.5s cubic-bezier(.77,0,.18,1)}
-#intro .bar.t{top:0}#intro .bar.b{bottom:0}
-#intro.open .bar{height:11vh}
-#intro.final .bar{height:0}
-.in-brand{position:absolute;inset:0;z-index:7;display:grid;place-items:center;pointer-events:none;text-align:center}
-.in-brand span{display:block;font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,2rem);animation:brand 1.4s .15s both}
-.in-brand i{display:block;height:1px;background:#efe7d9;margin:18px auto 0;width:0;animation:line 1.3s .15s both}
-@keyframes brand{0%{opacity:0;letter-spacing:.9em}35%{opacity:1;letter-spacing:.6em}75%{opacity:1}100%{opacity:0;letter-spacing:.6em}}
-@keyframes line{0%{width:0;opacity:1}55%{width:130px;opacity:1}100%{width:130px;opacity:0}}
-#intro .cp{position:absolute;z-index:7;left:4vw;right:4vw;bottom:calc(11vh + 5vh);text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,5.4vw,5.2rem);line-height:1.08;pointer-events:none;text-shadow:0 2px 30px rgba(0,0,0,.5)}
-#intro .cp em{font-style:italic}
-#intro .m{display:inline-block;overflow:hidden;padding:.06em .08em}
-#intro .m>span{display:inline-block;transform:translateY(112%);transition:transform .55s ease-in}
-#intro .cp.on .m>span{transform:none;transition:transform .95s cubic-bezier(.2,.7,.2,1);transition-delay:calc(.4s + var(--i)*.12s)}
-#intro .cp.gone .m>span{transform:translateY(-112%)}
-.in-final{position:absolute;inset:0;z-index:8;display:grid;place-items:center;text-align:center;background:radial-gradient(ellipse at 50% 40%,#2b7b6c 0%,#185a4e 55%,#0f4339 100%);opacity:0;pointer-events:none;transition:opacity 1.1s ease}
-#intro.final .in-final{opacity:1}
-.in-final h2{font-family:var(--serif);font-weight:400;font-size:clamp(4.5rem,17vw,16rem);line-height:.85;letter-spacing:.01em;overflow:hidden;padding:.04em .02em .08em}
-.in-final h2 span{display:inline-block;transform:translateY(115%)}
-#intro.final .in-final h2 span{transform:none;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(.55s + var(--i)*.1s)}
-.in-final p{margin-top:22px;color:#c7dcd3;opacity:0;transition:opacity 1s 1.5s}
-#intro.final .in-final p{opacity:1}
-.in-meta{position:absolute;z-index:9;left:4vw;top:calc(5.5vh - .6em);color:#efe7d9;opacity:0;transition:opacity .8s .6s}
-#intro.open:not(.final) .in-meta{opacity:.9}
-.in-skip{position:absolute;z-index:9;right:4vw;bottom:calc(5.5vh - .9em);background:none;border:0;color:#efe7d9;cursor:pointer;padding:6px 0;border-bottom:1px solid rgba(239,231,217,.5);opacity:0;animation:fadeIn .8s 1.2s forwards}
-.in-skip:hover{border-color:#efe7d9}
-.in-prog{position:absolute;left:0;bottom:0;height:2px;background:#efe7d9;width:0;z-index:9;animation:prog 9.4s linear forwards}
-@keyframes prog{to{width:100%}}
+
+/* ===== header ===== */
+.hd{position:fixed;inset:0 0 auto;z-index:100;transition:background .5s,box-shadow .5s,transform .5s var(--ease)}
+.hd.s{background:rgba(247,243,236,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.hd-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px;padding:0 var(--g);transition:height .5s var(--ease)}
+.hd.s .hd-in{height:68px}
+.hd nav{display:flex;gap:34px}
+.hd nav a,.hd .r a{font-size:.68rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);white-space:nowrap;position:relative}
+.hd nav a::after{content:"";position:absolute;left:0;right:.28em;bottom:-6px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.hd nav a:hover::after{transform:scaleX(1)}
+.logo{text-align:center;line-height:1;color:var(--ink)}
+.logo b{display:block;font-family:var(--serif);font-weight:400;font-size:1.65rem;letter-spacing:.38em;text-indent:.38em}
+.logo small{display:block;margin-top:6px;font-size:.5rem;font-weight:400;letter-spacing:.62em;text-indent:.62em;color:var(--mute)}
+.hd .r{display:flex;justify-content:flex-end;align-items:center;gap:30px;min-width:30px}
+.hd .r .btn{padding:13px 22px;font-size:.62rem;color:var(--ivory)}
+.burger{display:none;width:30px;height:14px;position:relative;background:none;border:0;cursor:pointer}
+.burger::before,.burger::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--ink);transition:transform .5s var(--ease),top .5s var(--ease),bottom .5s var(--ease)}
+.burger::before{top:0}.burger::after{bottom:0}
+body.menu-open .burger::before{top:6.5px;transform:rotate(45deg)}
+body.menu-open .burger::after{bottom:6.5px;transform:rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:90;background:var(--ivory);display:flex;flex-direction:column;justify-content:center;padding:100px var(--g) 40px;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}
+body.menu-open{overflow:hidden}
+body.menu-open .menu{opacity:1;visibility:visible}
+.menu a.big{display:flex;align-items:baseline;gap:18px;font-family:var(--serif);font-size:clamp(2.2rem,9vw,3.4rem);line-height:1.25;color:var(--ink);transform:translateY(20px);opacity:0;transition:transform .7s var(--ease),opacity .7s}
+.menu a.big span{font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;color:var(--gold)}
+body.menu-open .menu a.big{transform:none;opacity:1}
+body.menu-open .menu a.big:nth-child(2){transition-delay:.05s}
+body.menu-open .menu a.big:nth-child(3){transition-delay:.1s}
+body.menu-open .menu a.big:nth-child(4){transition-delay:.15s}
+body.menu-open .menu a.big:nth-child(5){transition-delay:.2s}
+.menu .foot{margin-top:48px;display:flex;flex-wrap:wrap;gap:16px 30px}
+
+/* ===== hero ===== */
+.hero{position:relative;display:grid;grid-template-columns:5fr 7fr;min-height:100svh;background:var(--ivory)}
+.hero-copy{display:flex;flex-direction:column;justify-content:flex-end;padding:140px var(--g) clamp(48px,7vh,90px)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,6.2vw,6.4rem);line-height:.98;letter-spacing:-.015em;color:var(--ink);margin:26px 0 30px}
+.hero h1 em{font-style:italic;color:var(--em)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.ready .hero h1 .ln>span{transform:none}
+.ready .hero h1 .ln:nth-child(2)>span{transition-delay:.1s}
+.ready .hero h1 .ln:nth-child(3)>span{transition-delay:.2s}
+.hero .lead{margin-bottom:40px}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:22px 34px}
+.hero-meta{display:flex;justify-content:space-between;gap:20px;margin-top:clamp(48px,9vh,110px);padding-top:22px;border-top:1px solid var(--line);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.fade-up{opacity:0;transform:translateY(16px);transition:opacity 1.1s .45s,transform 1.1s .45s var(--ease)}
+.ready .fade-up{opacity:1;transform:none}
+.hero-media{position:relative;overflow:hidden;background:var(--sand);clip-path:inset(0 0 0 100%);transition:clip-path 1.5s cubic-bezier(.76,0,.24,1)}
+.ready .hero-media{clip-path:inset(0)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.12);transition:transform 2.6s var(--ease)}
+.ready .hero-media img{transform:scale(1)}
+.hero-media figcaption{position:absolute;right:var(--g);bottom:clamp(36px,6vh,70px);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);background:rgba(247,243,236,.85);backdrop-filter:blur(6px);padding:12px 18px}
+.seal{position:absolute;left:calc(5/12*100%);top:56%;z-index:5;width:132px;height:132px;transform:translate(-50%,-50%);display:grid;place-items:center;border-radius:50%;background:var(--em-d);color:var(--ivory);opacity:0;transition:opacity 1s 1s}
+.ready .seal{opacity:1}
+.seal svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 28s linear infinite}
+.seal text{font-family:var(--sans);font-size:8.6px;letter-spacing:2.2px;fill:var(--gold-l);text-transform:uppercase}
+.seal b{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1;text-align:center}
+.seal b small{display:block;font-family:var(--sans);font-size:.5rem;letter-spacing:.3em;margin-top:4px;color:var(--gold-l)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ===== manifesto ===== */
+.manifesto{padding:clamp(110px,14vw,190px) 0 clamp(90px,11vw,150px);background:var(--paper)}
+.manifesto .quote{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.6vw,3.2rem);line-height:1.25;color:var(--ink);text-align:center;max-width:24ch;margin:30px auto 0}
+.manifesto .quote em{font-style:italic;color:var(--em)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(70px,9vw,120px);border-top:1px solid var(--line)}
+.pillars>div{padding:40px clamp(20px,3vw,44px) 0;border-right:1px solid var(--line)}
+.pillars>div:last-child{border:0}
+.pillars .num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.1rem}
+.pillars h3{font-family:var(--serif);font-weight:400;font-size:1.7rem;color:var(--ink);margin:14px 0 10px}
+.pillars p{color:var(--mute)}
+
+/* ===== coleções ===== */
+.colls{padding:clamp(100px,12vw,160px) 0;background:var(--ivory)}
+.coll-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,30px);align-items:start}
+.coll:nth-child(even){margin-top:80px}
+.coll figure{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--sand)}
+.coll img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.coll:hover img{transform:scale(1.05)}
+.coll figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(6,29,24,.35));opacity:0;transition:opacity .8s}
+.coll:hover figure::after{opacity:1}
+.coll .meta{padding-top:22px}
+.coll .n{font-family:var(--serif);font-style:italic;color:var(--gold)}
+.coll h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2vw,1.9rem);color:var(--ink);line-height:1.15;margin:6px 0 8px}
+.coll p{color:var(--mute);font-size:.95rem;margin-bottom:16px}
+
+/* ===== atelier ===== */
+.atelier{position:relative;padding:clamp(100px,12vw,160px) 0;background:var(--em-d);color:#d8dfda}
+.atelier .h2{color:var(--ivory)}
+.atelier .h2 em{color:var(--gold-l)}
+.atelier .lead{color:#a9b8b1}
+.at-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,100px);align-items:start}
+.at-preview{position:sticky;top:96px}
+.pv{position:relative;aspect-ratio:4/5;overflow:hidden;background:#0d3a32}
+.pv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .9s,transform 1.6s var(--ease)}
+.pv img.on{opacity:1;transform:none}
+.pv::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(6,29,24,.55));pointer-events:none}
+.pv-tag{position:absolute;z-index:2;left:18px;top:18px;padding:7px 12px;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ivory);background:rgba(6,29,24,.55);backdrop-filter:blur(6px)}
+.plate{position:absolute;z-index:2;left:8%;right:8%;bottom:7%;padding:16px 22px 18px;border-radius:999px;background:var(--metal);box-shadow:0 18px 40px -16px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 6px rgba(0,0,0,.18);text-align:center;transition:background .6s}
+.plate small{display:block;font-size:.55rem;letter-spacing:.34em;text-transform:uppercase;color:var(--engr);opacity:.75}
+.plate span{display:block;min-height:1.3em;color:var(--engr);text-shadow:0 1px 0 rgba(255,255,255,.55),0 -1px 0 rgba(0,0,0,.22);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s}
+.plate span.ph{opacity:.5}
+.f-classica{font-family:var(--serif);font-style:italic;font-size:1.55rem;line-height:1.3}
+.f-manuscrita{font-family:var(--script);font-size:2rem;line-height:1.15}
+.f-moderna{font-family:var(--sans);font-weight:400;font-size:1rem;letter-spacing:.32em;text-transform:uppercase;line-height:2.1}
+.spec{margin-top:28px;border-top:1px solid rgba(217,196,155,.25)}
+.spec div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid rgba(217,196,155,.14);font-size:.92rem}
+.spec dt{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#82958d;padding-top:4px}
+.spec dd{display:flex;align-items:center;gap:10px;color:var(--ivory);text-align:right}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;background:var(--sw);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+
+.step{border:0;padding:0 0 38px;margin:0 0 38px;border-bottom:1px solid rgba(217,196,155,.16)}
+.step legend{display:flex;align-items:baseline;gap:14px;font-family:var(--serif);font-size:1.6rem;color:var(--ivory);margin-bottom:22px;padding:0}
+.step legend span{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--gold-l)}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{position:relative;cursor:pointer}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt>span{display:flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid rgba(217,196,155,.28);font-size:.86rem;color:#cdd6d1;transition:border-color .35s,background .35s,color .35s}
+.opt:hover>span{border-color:var(--gold-l)}
+.opt input:checked+span{background:var(--ivory);border-color:var(--ivory);color:var(--em-d)}
+.opt input:focus-visible+span{outline:1px solid var(--gold-l);outline-offset:3px}
+.opt .sw{width:22px;height:22px;border-radius:50%;background:var(--sw);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3),0 2px 6px rgba(0,0,0,.3)}
+.opts.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.opts.cards .opt>span{flex-direction:column;align-items:stretch;gap:0;padding:0;text-align:center}
+.opts.cards img{aspect-ratio:1;object-fit:cover;width:100%;filter:saturate(.85);transition:filter .4s}
+.opts.cards .opt>span b{font-weight:400;font-size:.8rem;padding:11px 6px;line-height:1.3}
+.opts.cards .opt input:checked+span img{filter:none}
+.opts.fonts .opt>span{min-width:120px;justify-content:center;padding:10px 18px}
+.sub{margin-top:18px;display:grid;gap:8px}
+.sub[hidden]{display:none}
+.lbl{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#82958d}
+.field{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(217,196,155,.35);padding:14px 0;color:var(--ivory);font-size:1.05rem;border-radius:0;outline:none;transition:border-color .35s}
+.field:focus{border-color:var(--gold-l)}
+.field::placeholder{color:#6f857c}
+select.field{appearance:none;cursor:pointer;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23d9c49b'/%3E%3C/svg%3E") no-repeat right 4px center}
+select.field option{color:var(--ink)}
+textarea.field{min-height:90px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.count{font-size:.7rem;color:#6f857c;text-align:right}
+.at-send{display:grid;gap:16px;justify-items:start}
+.at-send p{font-size:.86rem;color:#8ea39a}
+.at-bar{display:none}
+
+/* ===== processo ===== */
+.process{padding:clamp(100px,12vw,160px) 0;background:var(--paper)}
+.pr-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,7vw,120px);align-items:center}
+.compare{position:relative;aspect-ratio:1;overflow:hidden;background:#0b0f0e;user-select:none;touch-action:pan-y}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.compare .top{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:1px;background:var(--ivory);pointer-events:none}
+.compare .handle::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--ivory);color:var(--em-d);display:grid;place-items:center;font-size:1rem;letter-spacing:.2em;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.compare .tag{position:absolute;top:20px;padding:8px 14px;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;background:rgba(247,243,236,.9);color:var(--ink);pointer-events:none}
+.compare .tag.l{left:20px}.compare .tag.r{right:20px}
+.steps{list-style:none;counter-reset:s;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:4px 10px;padding:24px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);grid-row:span 2;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.1rem;line-height:1.6}
+.steps h3{font-family:var(--serif);font-weight:400;font-size:1.45rem;color:var(--ink);line-height:1.3}
+.steps p{color:var(--mute);font-size:.95rem}
+.final{display:flex;align-items:center;gap:20px;margin-top:34px}
+.final img{width:96px;height:96px;object-fit:cover}
+.final p{font-size:.95rem;color:var(--mute)}
+.final b{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;color:var(--ink)}
+
+/* ===== galeria ===== */
+.pieces{padding:clamp(100px,12vw,160px) 0 clamp(90px,10vw,140px);background:var(--ivory);overflow:hidden}
+.arrows{display:flex;gap:10px}
+.arrows button{width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:1.1rem;color:var(--ink);transition:background .4s,color .4s,border-color .4s}
+.arrows button:hover{background:var(--em);border-color:var(--em);color:var(--ivory)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(250px,24vw,340px);gap:clamp(16px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--g);scroll-padding:0 var(--g);cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.rail.drag *{pointer-events:none}
+.pc{scroll-snap-align:start}
+.pc figure{aspect-ratio:4/5;overflow:hidden;background:var(--sand)}
+.pc img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.pc:hover img{transform:scale(1.05)}
+.pc .cat{margin-top:20px}
+.pc h3{font-family:var(--serif);font-weight:400;font-size:1.45rem;color:var(--ink);line-height:1.2;margin:6px 0 14px}
+.pc button{background:none;border:0;cursor:pointer}
+
+/* ===== em detalhe ===== */
+.detail{padding:clamp(100px,12vw,160px) 0;background:var(--em-dd);color:#a9b8b1}
+.detail .h2{color:var(--ivory)}
+.detail .h2 em{color:var(--gold-l)}
+.dt-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(40px,6vw,100px);align-items:center}
+.dt-vids{display:grid;grid-template-columns:.75fr 1fr;gap:clamp(12px,1.6vw,22px);align-items:end}
+.dt-vids figure{position:relative;overflow:hidden;background:#000}
+.dt-vids figure:first-child{aspect-ratio:9/16}
+.dt-vids figure:last-child{aspect-ratio:1;margin-bottom:12%}
+.dt-vids video{width:100%;height:100%;object-fit:cover}
+.dt-vids figcaption{position:absolute;left:18px;bottom:16px;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ivory);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* ===== maison ===== */
+.maison{padding:clamp(100px,12vw,160px) 0;background:var(--paper)}
+.ms-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(40px,7vw,120px);align-items:center}
+.ms-txt .h2{margin:22px 0 26px}
+.ms-txt p{color:var(--mute);max-width:44ch}
+.ms-info{margin:34px 0 38px;border-top:1px solid var(--line)}
+.ms-info div{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:.95rem;color:var(--ink)}
+.ms-info span:first-child{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);padding-top:4px}
+.ms-links{display:flex;flex-wrap:wrap;gap:20px 34px;align-items:center}
+.ms-pics{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px);align-items:start}
+.ms-pics figure{overflow:hidden;aspect-ratio:3/4}
+.ms-pics figure:last-child{margin-top:22%}
+.ms-pics img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.ms-pics figure:hover img{transform:scale(1.05)}
+
+/* ===== instagram ===== */
+.insta{padding:clamp(80px,9vw,120px) 0;background:var(--ivory)}
+.ig{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1vw,14px)}
+.ig a{position:relative;aspect-ratio:1;overflow:hidden;display:block}
+.ig img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s}
+.ig a:hover img{transform:scale(1.07);filter:brightness(.85)}
+
+/* ===== contato ===== */
+.contact{padding:clamp(100px,12vw,160px) 0;background:var(--em-d);color:#a9b8b1}
+.contact .h2{color:var(--ivory);margin:22px 0 24px}
+.contact .h2 em{color:var(--gold-l)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px)}
+.ct-list{margin-top:40px;border-top:1px solid rgba(217,196,155,.2)}
+.ct-list div{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(217,196,155,.14);color:var(--ivory);font-size:.95rem}
+.ct-list span:first-child{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#82958d;padding-top:4px}
+.ct-form{display:grid;gap:26px;align-content:start}
+
+/* ===== rodapé ===== */
+.ft{background:var(--em-dd);color:#7f918a;padding:clamp(70px,9vw,110px) 0 100px;overflow:hidden}
+.ft-word{font-family:var(--serif);font-weight:400;font-size:clamp(5rem,21vw,19rem);line-height:.8;letter-spacing:.06em;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(217,196,155,.35)}
+.ft-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 30px;margin-top:clamp(50px,6vw,80px);padding-top:26px;border-top:1px solid rgba(217,196,155,.14);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase}
+.ft-row nav{display:flex;flex-wrap:wrap;gap:14px 28px}
+.ft-row a:hover{color:var(--ivory)}
+
+/* botão flutuante */
+.wa{position:fixed;right:22px;bottom:22px;z-index:80;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--em);color:var(--ivory);box-shadow:0 14px 30px -10px rgba(6,29,24,.6);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .5s,transform .5s var(--ease),background .4s}
+.wa.on{opacity:1;transform:none;pointer-events:auto}
+.wa:hover{background:var(--em-dd)}
+.wa svg{width:24px;height:24px}
+
+/* revelações */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv-img{clip-path:inset(12% 0 0 0);transition:clip-path 1.4s cubic-bezier(.76,0,.24,1)}
+.rv-img.in{clip-path:inset(0)}
+
+/* ===== responsivo ===== */
+@media(max-width:1100px){
+  .hd nav,.hd .r .hide-m{display:none}
+  .burger{display:block}
+  .hd-in{grid-template-columns:auto 1fr auto}
+  .hd-in .logo{justify-self:center}
+  .coll-grid{grid-template-columns:repeat(2,1fr)}
+  .coll:nth-child(even){margin-top:60px}
+  .at-grid,.pr-grid,.dt-grid,.ms-grid,.ct-grid{grid-template-columns:1fr}
+  .at-preview{position:relative;top:0;max-width:560px}
+  .ig{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-media{order:-1;height:62svh;min-height:380px;clip-path:inset(100% 0 0 0)}
+  .hero-copy{padding:44px var(--g) 56px}
+  .hero-media figcaption{display:none}
+  .seal{left:auto;right:var(--g);top:62svh;width:104px;height:104px;transform:translateY(-50%)}
+  .seal b{font-size:1.5rem}
+  .hero-meta{margin-top:44px}
+  .sec-head.split{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .pillars>div{border-right:0;border-bottom:1px solid var(--line);padding:30px 0}
+  .opts.cards{grid-template-columns:repeat(2,1fr)}
+  .at-bar{position:sticky;bottom:12px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:10px;padding:10px 10px 10px 18px;background:rgba(6,29,24,.94);backdrop-filter:blur(10px);border:1px solid rgba(217,196,155,.25);font-size:.82rem;color:var(--ivory);line-height:1.35}
+  .at-bar .btn{padding:13px 18px;font-size:.6rem;flex:none}
+  body.in-atelier .wa{opacity:0;pointer-events:none}
+  .dt-vids figure:last-child{margin-bottom:0}
+}
+@media(max-width:560px){
+  .hd-in{height:70px}
+  .hd .r .btn{display:none}
+  .coll-grid{gap:14px}
+  .coll:nth-child(even){margin-top:40px}
+  .coll p{display:none}
+  .row2{grid-template-columns:1fr}
+  .hero-meta{flex-direction:column;gap:6px}
+  .rail{grid-auto-columns:76vw}
+  .arrows{display:none}
+  .ms-info div,.ct-list div{flex-direction:column;gap:2px}
+  .ms-info span:last-child,.ct-list span:last-child,.ct-list a{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body class="intro-on">
 
-<div id="intro" aria-hidden="true">
-  <div class="sc" style="--x0:2%;--y0:2%;--x1:-2%;--y1:-2%"><img src="fotos/aliancas-ouro.jpg" alt=""></div>
-  <div class="sc" style="--x0:-2%;--y0:0%;--x1:2%;--y1:-1%"><img src="fotos/anel-trevo.jpg" alt=""></div>
-  <div class="sc" style="--x0:0%;--y0:-2%;--x1:1%;--y1:2%"><img src="fotos/pingente-barras.jpg" alt=""></div>
-  <div class="sc" style="--x0:2%;--y0:0%;--x1:-1%;--y1:1%"><img src="fotos/anel-safira.jpg" alt=""></div>
+<div id="intro" aria-hidden="true"><div class="mono"><b>BERTA</b><i></i></div></div>
 
-  <div class="in-vig"></div>
-  <div class="in-grain"></div>
-  <div class="bar t"></div><div class="bar b"></div>
-
-  <div class="in-brand"><div><span>BERTA</span><i></i></div></div>
-
-  <div class="cp"><span class="m"><span style="--i:0">Cada</span></span> <span class="m"><span style="--i:1"><em>detalhe,</em></span></span></div>
-  <div class="cp"><span class="m"><span style="--i:0">uma</span></span> <span class="m"><span style="--i:1"><em>história.</em></span></span></div>
-  <div class="cp"><span class="m"><span style="--i:0">Alianças</span></span> <span class="m"><span style="--i:1">e</span></span> <span class="m"><span style="--i:2">joias</span></span> <span class="m"><span style="--i:3"><em>personalizadas</em></span></span></div>
-  <div class="cp"><span class="m"><span style="--i:0">Em</span></span> <span class="m"><span style="--i:1">Santos,</span></span> <span class="m"><span style="--i:2">há</span></span> <span class="m"><span style="--i:3"><em>15</em></span></span> <span class="m"><span style="--i:4"><em>anos.</em></span></span></div>
-
-  <div class="in-final">
-    <div>
-      <h2 aria-label="BERTA"><span style="--i:0">B</span><span style="--i:1">E</span><span style="--i:2">R</span><span style="--i:3">T</span><span style="--i:4">A</span></h2>
-      <p class="up">Alianças · Joias personalizadas · Santos</p>
-    </div>
-  </div>
-
-  <div class="in-meta up">Berta Jewelry — Santos</div>
-  <button class="in-skip up" id="inSkip" type="button">Pular intro &rsaquo;</button>
-  <div class="in-prog"></div>
-</div>
-
-<header id="hd">
-  <div class="bar up">
-    <nav id="nav">
+<header class="hd" id="hd">
+  <div class="hd-in">
+    <nav aria-label="Principal">
       <a href="#colecoes">Coleções</a>
-      <a href="#galeria">Galeria 3D</a>
-      <a href="#projeto">Do desenho à joia</a>
-      <a href="#sobre">A loja</a>
-      <a href="#contato">Contato</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#processo">Processo</a>
+      <a href="#maison">Maison</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Menu"></button>
-    <a href="#top" class="logo">BERTA<small>JEWELRY</small></a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"></button>
+    <a href="#top" class="logo" aria-label="Berta Jewelry, início"><b>BERTA</b><small>JEWELRY</small></a>
     <div class="r">
-      <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">Instagram</a>
-      <a href="#contato">WhatsApp</a>
+      <a class="hide-m" href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="#contato">Agendar atendimento</a>
     </div>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero" id="hero">
-    <div class="hl">
-      <img src="fotos/aliancas-ouro.jpg" alt="Alianças e anel com pedras">
-      <div class="est up">Santos · Super Centro Boqueirão</div>
-    </div>
-    <div class="hr">
-      <div class="medal-wrap"><div class="medal" role="img" aria-label="Anel trevo cravejado"></div></div>
-      <div class="mk">
-        <span class="up kick">Alianças · Joias personalizadas</span>
-        <h1 class="mark" aria-label="BERTA"><span style="--i:0" aria-hidden="true">B</span><span style="--i:1" aria-hidden="true">E</span><span style="--i:2" aria-hidden="true">R</span><span style="--i:3" aria-hidden="true">T</span><span style="--i:4" aria-hidden="true">A</span></h1>
-        <a class="up cta" href="#galeria">Ver galeria 3D</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="intro" id="colecoes">
-    <div class="w">
-      <p class="manifesto rv">Alianças e joias <em>personalizadas</em>, em Santos há 15 anos. Peças que guardam uma história.</p>
-      <ol class="index rv">
-        <li><a href="#galeria" data-go="aliancas-bicolor"><span class="n up">01</span><span class="t">Alianças</span><span class="d">Ouro e prata, com pedras e gravação sob medida</span><span class="a">&rarr;</span></a></li>
-        <li><a href="#galeria" data-go="anel-safira"><span class="n up">02</span><span class="t">Anéis</span><span class="d">Solitários, trevos e anéis com pedras coloridas</span><span class="a">&rarr;</span></a></li>
-        <li><a href="#galeria" data-go="pingente-barras"><span class="n up">03</span><span class="t">Pingentes com nome</span><span class="d">Nomes, datas de nascimento e pedras</span><span class="a">&rarr;</span></a></li>
-        <li><a href="#galeria" data-go="pets-charms"><span class="n up">04</span><span class="t">Mini pets</span><span class="d">O seu cachorrinho em ouro</span><span class="a">&rarr;</span></a></li>
-      </ol>
-    </div>
-  </section>
-
-  <div class="band">
-    <div class="w">
-      <div><b>15 anos</b><span>Empresa familiar</span></div>
-      <div><b>Ouro e prata</b><span>Alianças e joias</span></div>
-      <div><b>Sob medida</b><span>Nomes, datas e pedras</span></div>
-      <div><b>Em 3D</b><span>Modelagem antes da produção</span></div>
-    </div>
+<div class="menu" id="menu">
+  <a class="big" href="#colecoes"><span>01</span>Coleções</a>
+  <a class="big" href="#atelier"><span>02</span>Atelier</a>
+  <a class="big" href="#processo"><span>03</span>Processo</a>
+  <a class="big" href="#maison"><span>04</span>Maison</a>
+  <a class="big" href="#contato"><span>05</span>Contato</a>
+  <div class="foot">
+    <a class="link" href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">Instagram</a>
+    <a class="link js-wa" href="#">WhatsApp</a>
   </div>
+</div>
 
-  <section class="gal" id="galeria">
-    <div class="w">
-      <div class="sec-h rv">
-        <h2>Galeria <em>3D</em></h2>
-        <p>Gire a galeria e conheça peças reais da Berta Jewelry.</p>
+<main id="top">
+  <!-- capa -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow fade-up">Alta joalheria personalizada · Santos</span>
+      <h1><span class="ln"><span>Joias feitas</span></span><span class="ln"><span>para uma só</span></span><span class="ln"><span><em>história.</em></span></span></h1>
+      <p class="lead fade-up">Alianças, anéis e pingentes desenhados sob medida, do primeiro esboço em 3D ao último polimento.</p>
+      <div class="ctas fade-up">
+        <a class="btn" href="#atelier">Criar a minha joia</a>
+        <a class="link" href="#colecoes">Explorar coleções</a>
       </div>
+      <div class="hero-meta fade-up"><span>Super Centro Boqueirão · Loja 184</span><span>Há 15 anos em Santos</span></div>
     </div>
-    <div class="viewer" id="viewer">
-      <canvas></canvas>
-      <button class="nav l" id="prev" aria-label="Anterior">&lsaquo;</button>
-      <button class="nav r" id="next" aria-label="Próxima">&rsaquo;</button>
-    </div>
-    <div class="gal-info">
-      <div class="up" id="pCat" style="color:var(--mute)"></div>
-      <h3 id="pName"></h3>
-      <p class="d" id="pDesc"></p>
-      <div class="chips up" id="chips"></div>
-      <a href="#contato" class="btn up" id="pCta">Quero esta peça</a>
+    <figure class="hero-media">
+      <img src="fotos/aliancas-ouro.jpg" alt="Alianças em ouro com pedras, em uma mão de madeira" fetchpriority="high">
+      <figcaption>Alianças em ouro · feitas sob medida</figcaption>
+    </figure>
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 132 132"><defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text><textPath href="#circ" textLength="324">Alianças · Joias personalizadas · Santos ·</textPath></text></svg>
+      <b>15<small>ANOS</small></b>
     </div>
   </section>
 
-  <section id="projeto">
+  <!-- manifesto -->
+  <section class="manifesto">
     <div class="w">
-      <div class="sec-h rv">
-        <h2>Do desenho <em>3D</em> à joia</h2>
-        <p>Muitas peças nascem como um modelo em 3D, viram imagem realista e depois se transformam em joia de verdade.</p>
-      </div>
-      <div class="flow">
-        <div class="tile tilt"><img src="fotos/cad-anel-taca.jpg" alt="Modelo 3D do anel"><div class="lbl up"><b>1 · Modelagem 3D</b></div></div>
-        <div class="tile tilt"><img src="fotos/render-anel-taca.jpg" alt="Imagem realista do anel"><div class="lbl up"><b>2 · Imagem realista</b></div></div>
-        <div class="tile tilt"><img src="fotos/anel-granada.jpg" alt="Anel pronto"><div class="lbl up"><b>3 · Joia pronta</b></div></div>
-      </div>
-      <div class="flow">
-        <div class="tile tilt"><img src="fotos/cad-trevo.jpg" alt="Modelo 3D do anel trevo"><div class="lbl up"><b>1 · Modelagem 3D</b></div></div>
-        <div class="tile tilt"><img src="fotos/render-trevo.jpg" alt="Imagem realista do anel trevo"><div class="lbl up"><b>2 · Imagem realista</b></div></div>
-        <div class="tile tilt"><img src="fotos/anel-trevo.jpg" alt="Anel trevo pronto"><div class="lbl up"><b>3 · Joia pronta</b></div></div>
+      <div class="sec-head center rv" style="margin:0"><span class="eyebrow">A casa</span><span class="rule"></span></div>
+      <p class="quote rv">Cada peça começa com uma conversa. Um nome, uma data, a pedra que lembra alguém, e nós transformamos isso em <em>ouro.</em></p>
+      <div class="pillars">
+        <div class="rv"><span class="num">I.</span><h3>Sob medida</h3><p>Nomes, datas, pedras de nascimento e gravações. Cada joia é feita para uma pessoa.</p></div>
+        <div class="rv"><span class="num">II.</span><h3>Desenho em 3D</h3><p>Antes de existir em ouro, a sua peça ganha forma em detalhe na tela.</p></div>
+        <div class="rv"><span class="num">III.</span><h3>Empresa familiar</h3><p>15 anos de atendimento próximo no Super Centro Boqueirão, em Santos.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="videos">
+  <!-- coleções -->
+  <section class="colls" id="colecoes">
     <div class="w">
-      <div class="sec-h rv">
-        <h2>Em <em>movimento</em></h2>
-        <p>Veja o brilho das peças de pertinho.</p>
+      <div class="sec-head split rv">
+        <div style="display:grid;gap:20px"><span class="eyebrow">Coleções</span><h2 class="h2">Peças que nascem<br><em>sob medida</em></h2></div>
+        <p class="lead">Quatro famílias de joias, infinitas combinações. Escolha um ponto de partida e personalize no Atelier.</p>
       </div>
-    </div>
-    <div class="vids">
-      <div class="tile"><video src="fotos/video-conjunto.mp4" poster="fotos/poster-conjunto.jpg" muted loop playsinline preload="metadata"></video><div class="lbl up"><b>Conjunto com pedra azul</b></div></div>
-      <div class="tile"><video src="fotos/video-trevo.mp4" poster="fotos/poster-trevo.jpg" muted loop playsinline preload="metadata"></video><div class="lbl up"><b>Anel Trevo</b></div></div>
+      <div class="coll-grid">
+        <article class="coll rv">
+          <figure class="rv-img"><img src="fotos/aliancas-bicolor.jpg" alt="Alianças bicolor em ouro amarelo e branco" loading="lazy"></figure>
+          <div class="meta"><span class="n">01</span><h3>Alianças</h3><p>Ouro e prata, com pedras e gravação por dentro.</p><button class="link js-go" data-piece="alianca" data-metal="bicolor" data-stone="brilhante">Personalizar</button></div>
+        </article>
+        <article class="coll rv">
+          <figure class="rv-img"><img src="fotos/anel-trevo.jpg" alt="Anel trevo cravejado" loading="lazy"></figure>
+          <div class="meta"><span class="n">02</span><h3>Anéis</h3><p>Solitários, trevos e pedras coloridas.</p><button class="link js-go" data-piece="anel" data-metal="amarelo" data-stone="brilhante">Personalizar</button></div>
+        </article>
+        <article class="coll rv">
+          <figure class="rv-img"><img src="fotos/pingente-nomes.jpg" alt="Pingente de corações com nomes da família" loading="lazy"></figure>
+          <div class="meta"><span class="n">03</span><h3>Pingentes com nome</h3><p>Nomes, datas e pedras de nascimento.</p><button class="link js-go" data-piece="pingente" data-metal="amarelo" data-stone="mes">Personalizar</button></div>
+        </article>
+        <article class="coll rv">
+          <figure class="rv-img"><img src="fotos/pets-charms.jpg" alt="Miniaturas de cachorros em ouro" loading="lazy"></figure>
+          <div class="meta"><span class="n">04</span><h3>Mini pets</h3><p>O seu companheiro eternizado em ouro.</p><button class="link js-go" data-piece="pet" data-metal="amarelo" data-stone="sem">Personalizar</button></div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="store" id="sobre">
+  <!-- atelier -->
+  <section class="atelier" id="atelier">
     <div class="w">
-      <div class="sec-h rv">
-        <h2>Nossa <em>loja</em></h2>
-        <p>Venha conhecer pessoalmente.</p>
+      <div class="sec-head split rv">
+        <div style="display:grid;gap:20px"><span class="eyebrow" style="color:var(--gold-l)">Atelier Berta</span><h2 class="h2">Desenhe a sua <em>joia</em></h2></div>
+        <p class="lead">Escolha cada detalhe. O seu projeto chega ao atelier pelo WhatsApp e respondemos com sugestões e valores.</p>
       </div>
-      <div class="store-grid">
-        <div class="store-info rv">
-          <div class="up" style="color:var(--mute)">Endereço</div>
-          <h3>Super Centro Boqueirão</h3>
-          <p>Loja 184 · Santos, SP</p>
-          <p>Empresa familiar há 15 anos no ramo de joias e semijoias. Alianças, anéis, pingentes e peças personalizadas, com atendimento próximo para ajudar você a escolher.</p>
-          <a href="#contato" class="btn up">Falar com a loja</a>
+
+      <div class="at-grid">
+        <div class="at-preview rv">
+          <div class="pv" id="pv">
+            <img alt="" id="pvA"><img alt="" id="pvB">
+            <span class="pv-tag">Peça de referência</span>
+            <div class="plate" id="plate"><small>Gravação</small><span id="pvText"></span></div>
+          </div>
+          <dl class="spec" id="spec"></dl>
         </div>
-        <figure class="rv"><div class="ph"><img src="fotos/loja-fachada.jpg" alt="Fachada da Berta Jewelry"></div><figcaption class="up">Por fora</figcaption></figure>
-        <figure class="rv"><div class="ph"><img src="fotos/loja-vitrine.jpg" alt="Vitrine da Berta Jewelry"></div><figcaption class="up">Por dentro</figcaption></figure>
+
+        <form class="at-steps" id="atelierForm" novalidate>
+          <fieldset class="step rv">
+            <legend><span>01</span>A peça</legend>
+            <div class="opts cards">
+              <label class="opt"><input type="radio" name="piece" value="alianca" checked><span><img src="fotos/aliancas-ouro.jpg" alt="" loading="lazy"><b>Aliança</b></span></label>
+              <label class="opt"><input type="radio" name="piece" value="anel"><span><img src="fotos/anel-trevo.jpg" alt="" loading="lazy"><b>Anel</b></span></label>
+              <label class="opt"><input type="radio" name="piece" value="pingente"><span><img src="fotos/pingente-barras.jpg" alt="" loading="lazy"><b>Pingente com nome</b></span></label>
+              <label class="opt"><input type="radio" name="piece" value="pet"><span><img src="fotos/pets-charms.jpg" alt="" loading="lazy"><b>Mini pet</b></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step rv">
+            <legend><span>02</span>O metal</legend>
+            <div class="opts" id="metalOpts"></div>
+          </fieldset>
+
+          <fieldset class="step rv">
+            <legend><span>03</span>A pedra</legend>
+            <div class="opts" id="stoneOpts"></div>
+            <div class="sub" id="monthBox" hidden>
+              <label class="lbl" for="month">Mês de nascimento</label>
+              <select class="field" id="month" name="month"></select>
+            </div>
+          </fieldset>
+
+          <fieldset class="step rv">
+            <legend><span>04</span>A gravação</legend>
+            <div class="sub" style="margin:0 0 22px">
+              <label class="lbl" for="engr">Texto (nomes, iniciais, uma data)</label>
+              <input class="field" id="engr" name="engr" maxlength="22" autocomplete="off">
+              <span class="count" id="engrCount">0/22</span>
+            </div>
+            <span class="lbl">Estilo da letra</span>
+            <div class="opts fonts" style="margin-top:12px">
+              <label class="opt"><input type="radio" name="font" value="classica" checked><span class="f-classica" style="font-size:1.15rem">Clássica</span></label>
+              <label class="opt"><input type="radio" name="font" value="manuscrita"><span class="f-manuscrita" style="font-size:1.45rem">Manuscrita</span></label>
+              <label class="opt"><input type="radio" name="font" value="moderna"><span class="f-moderna" style="font-size:.72rem">Moderna</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step rv">
+            <legend><span>05</span>Os detalhes</legend>
+            <span class="lbl">Ocasião</span>
+            <div class="opts" style="margin:12px 0 26px">
+              <label class="opt"><input type="radio" name="occ" value="Casamento"><span>Casamento</span></label>
+              <label class="opt"><input type="radio" name="occ" value="Noivado"><span>Noivado</span></label>
+              <label class="opt"><input type="radio" name="occ" value="Presente"><span>Presente</span></label>
+              <label class="opt"><input type="radio" name="occ" value="Homenagem"><span>Homenagem</span></label>
+              <label class="opt"><input type="radio" name="occ" value="Para mim"><span>Para mim</span></label>
+            </div>
+            <div class="row2">
+              <div class="sub" style="margin:0"><label class="lbl" for="aName">Seu nome</label><input class="field" id="aName" name="name" autocomplete="name"></div>
+              <div class="sub" style="margin:0" id="sizeBox"><label class="lbl" for="aSize">Aro (se souber)</label><input class="field" id="aSize" name="size" inputmode="numeric" placeholder="Ex.: 16"></div>
+            </div>
+            <div class="sub" style="margin-top:26px"><label class="lbl" for="aNotes">Algo mais que devemos saber?</label><textarea class="field" id="aNotes" name="notes" placeholder="Uma referência, um prazo, uma história..."></textarea></div>
+          </fieldset>
+
+          <div class="at-send rv">
+            <button class="btn light" type="submit">Enviar meu projeto ao atelier</button>
+            <p>Abre o WhatsApp da loja com o resumo da sua joia. Sem compromisso.</p>
+          </div>
+        </form>
+      </div>
+      <div class="at-bar" aria-hidden="true">
+        <span id="barTxt"></span>
+        <button class="btn light" type="submit" form="atelierForm" tabindex="-1">Enviar</button>
       </div>
     </div>
   </section>
 
-  <section class="insta" id="instagram">
+  <!-- processo -->
+  <section class="process" id="processo">
     <div class="w">
-      <div class="sec-h rv">
-        <h2>Acompanhe no <em>Instagram</em></h2>
-        <a class="up" href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener" style="border-bottom:1px solid var(--ink)">@bertajewelry_santos</a>
-      </div>
-      <div class="row rv">
-        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-abraco.jpg" alt="Anel abraço"></a>
-        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-coracao.jpg" alt="Anel coração com iniciais"></a>
-        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/pingente-nomes.jpg" alt="Pingente corações com nomes"></a>
-        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/aliancas-ouro.jpg" alt="Alianças"></a>
-        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-safira.jpg" alt="Anel com pedra azul"></a>
-        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-granada.jpg" alt="Anel com pedra vermelha"></a>
+      <div class="sec-head rv"><span class="eyebrow">Processo</span><h2 class="h2">Do desenho <em>à joia</em></h2></div>
+      <div class="pr-grid">
+        <div class="compare rv" id="compare">
+          <img src="fotos/render-trevo.jpg" alt="Imagem realista do anel trevo" loading="lazy">
+          <img class="top" src="fotos/cad-trevo.jpg" alt="Modelo 3D do anel trevo" loading="lazy">
+          <span class="tag l">Desenho 3D</span><span class="tag r">Imagem realista</span>
+          <div class="handle"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar desenho 3D e imagem realista">
+        </div>
+        <div class="rv">
+          <ol class="steps">
+            <li><h3>Conversa</h3><p>Você conta a história: nomes, datas, pedras e o estilo que imagina.</p></li>
+            <li><h3>Desenho em 3D</h3><p>A peça é modelada no computador, nas medidas exatas.</p></li>
+            <li><h3>Imagem realista</h3><p>Você vê como a joia vai ficar antes da produção.</p></li>
+            <li><h3>Produção</h3><p>Ouro ou prata, cravação das pedras e gravação.</p></li>
+            <li><h3>Entrega</h3><p>Uma joia única, pronta para começar a sua história.</p></li>
+          </ol>
+          <div class="final"><img src="fotos/anel-trevo.jpg" alt="Anel trevo pronto" loading="lazy"><p><b>E então, a joia.</b>Arraste a imagem ao lado para ver o caminho.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contato">
-    <div class="w cg">
-      <div class="rv">
-        <div class="up" style="color:#8b8377">Contato</div>
-        <h2>Vamos criar a sua <em>joia</em>?</h2>
-        <p>Conte o que você procura e respondemos pelo WhatsApp com sugestões e valores.</p>
-        <ul class="up">
-          <li><span>Instagram</span><a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">@bertajewelry_santos</a></li>
-          <li><span>Loja</span><span>Super Centro Boqueirão, loja 184</span></li>
-          <li><span>Cidade</span><span>Santos · SP</span></li>
-        </ul>
+  <!-- galeria -->
+  <section class="pieces" id="pecas">
+    <div class="w">
+      <div class="sec-head split rv">
+        <div style="display:grid;gap:20px"><span class="eyebrow">Galeria</span><h2 class="h2">Peças <em>da casa</em></h2></div>
+        <div class="arrows"><button id="railPrev" aria-label="Anterior">&larr;</button><button id="railNext" aria-label="Próxima">&rarr;</button></div>
       </div>
-      <form id="form" class="rv">
-        <input id="fName" placeholder="Seu nome" required>
-        <input id="fPiece" placeholder="Que peça procura? (alianças, anel, pingente...)">
-        <textarea id="fMsg" placeholder="Mensagem"></textarea>
-        <button class="btn up" type="submit">Enviar pelo WhatsApp</button>
+    </div>
+    <div class="rail" id="rail"></div>
+  </section>
+
+  <!-- em detalhe -->
+  <section class="detail">
+    <div class="w dt-grid">
+      <div class="rv">
+        <span class="eyebrow" style="color:var(--gold-l)">Em detalhe</span>
+        <h2 class="h2" style="margin:22px 0 24px">O brilho, <em>de perto</em></h2>
+        <p class="lead" style="color:#a9b8b1">Fotos não contam tudo. Veja como a luz atravessa as pedras e corre pelo metal.</p>
+      </div>
+      <div class="dt-vids rv">
+        <figure><video src="fotos/video-conjunto.mp4" poster="fotos/poster-conjunto.jpg" muted loop playsinline preload="none"></video><figcaption>Conjunto com pedra azul</figcaption></figure>
+        <figure><video src="fotos/video-trevo.mp4" poster="fotos/poster-trevo.jpg" muted loop playsinline preload="none"></video><figcaption>Anel trevo</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- maison -->
+  <section class="maison" id="maison">
+    <div class="w ms-grid">
+      <div class="ms-txt rv">
+        <span class="eyebrow">A Maison</span>
+        <h2 class="h2">Venha nos <em>visitar</em></h2>
+        <p>Empresa familiar há 15 anos no ramo de joias. Um atendimento próximo, sem pressa, para ajudar você a escolher ou criar a peça certa.</p>
+        <div class="ms-info">
+          <div><span>Endereço</span><span>Super Centro Boqueirão, loja 184</span></div>
+          <div><span>Cidade</span><span>Santos · SP</span></div>
+        </div>
+        <div class="ms-links">
+          <a class="btn" href="#contato">Agendar atendimento</a>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Super+Centro+Boqueir%C3%A3o+Santos" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+      </div>
+      <div class="ms-pics">
+        <figure class="rv-img"><img src="fotos/loja-fachada.jpg" alt="Fachada da Berta Jewelry" loading="lazy"></figure>
+        <figure class="rv-img"><img src="fotos/loja-vitrine.jpg" alt="Vitrines da Berta Jewelry" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- instagram -->
+  <section class="insta">
+    <div class="w">
+      <div class="sec-head split rv">
+        <div style="display:grid;gap:20px"><span class="eyebrow">Instagram</span><h2 class="h2">@bertajewelry<em>_santos</em></h2></div>
+        <a class="link" href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">Seguir</a>
+      </div>
+      <div class="ig rv">
+        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-abraco.jpg" alt="Anel abraço" loading="lazy"></a>
+        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-coracao.jpg" alt="Anel coração com iniciais" loading="lazy"></a>
+        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/pingente-barras.jpg" alt="Pingentes barra com nomes" loading="lazy"></a>
+        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/aliancas-bicolor.jpg" alt="Alianças bicolor" loading="lazy"></a>
+        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-safira.jpg" alt="Anel com pedra azul" loading="lazy"></a>
+        <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener"><img src="fotos/anel-granada.jpg" alt="Anel com pedra vermelha" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- contato -->
+  <section class="contact" id="contato">
+    <div class="w ct-grid">
+      <div class="rv">
+        <span class="eyebrow" style="color:var(--gold-l)">Atendimento exclusivo</span>
+        <h2 class="h2">Vamos criar algo <em>só seu?</em></h2>
+        <p>Conte o que você procura. Respondemos pelo WhatsApp com sugestões e valores, ou combinamos um horário na loja.</p>
+        <div class="ct-list">
+          <div><span>WhatsApp</span><a class="js-wa" href="#">(13) 99109-7122</a></div>
+          <div><span>Instagram</span><a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">@bertajewelry_santos</a></div>
+          <div><span>Loja</span><span>Super Centro Boqueirão, loja 184 · Santos</span></div>
+        </div>
+      </div>
+      <form class="ct-form rv" id="ctForm">
+        <div class="sub" style="margin:0"><label class="lbl" for="cName">Seu nome</label><input class="field" id="cName" required autocomplete="name"></div>
+        <div class="sub" style="margin:0"><label class="lbl" for="cWhat">Como podemos ajudar?</label>
+          <select class="field" id="cWhat">
+            <option>Quero criar uma joia personalizada</option>
+            <option>Quero agendar uma visita à loja</option>
+            <option>Alianças de casamento ou noivado</option>
+            <option>Tenho uma dúvida</option>
+          </select>
+        </div>
+        <div class="sub" style="margin:0"><label class="lbl" for="cMsg">Mensagem</label><textarea class="field" id="cMsg" placeholder="Conte um pouco sobre a peça ou o melhor dia para a visita"></textarea></div>
+        <button class="btn light" type="submit" style="justify-self:start">Enviar pelo WhatsApp</button>
       </form>
     </div>
   </section>
 </main>
 
-<footer class="up">© <span id="yr"></span> Berta Jewelry · Santos · @bertajewelry_santos</footer>
+<footer class="ft">
+  <div class="w">
+    <div class="ft-word" aria-hidden="true">BERTA</div>
+    <div class="ft-row">
+      <span>© <span id="yr"></span> Berta Jewelry · Santos</span>
+      <nav aria-label="Rodapé"><a href="#colecoes">Coleções</a><a href="#atelier">Atelier</a><a href="#maison">Maison</a><a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener">Instagram</a></nav>
+    </div>
+  </div>
+</footer>
 
-<script src="fotos/fotos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<a class="wa js-wa" id="waFab" href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg></a>
+
 <script>
-/* Número do WhatsApp (DDI+DDD+número, só dígitos). Vazio = abre wa.link/zjkcbs do Instagram da loja */
-const WHATSAPP = '';
-const wa = txt => WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}` : 'https://wa.link/zjkcbs';
+/* WhatsApp da loja (DDI+DDD+número) */
+const WHATSAPP = '5513991097122';
+const wa = txt => `https://wa.me/${WHATSAPP}` + (txt ? `?text=${encodeURIComponent(txt)}` : '');
+document.querySelectorAll('.js-wa').forEach(a => { a.href = wa('Olá, Berta! Vim pelo site e gostaria de falar com vocês.'); a.target = '_blank'; a.rel = 'noopener'; });
+const $ = id => document.getElementById(id);
+$('yr').textContent = new Date().getFullYear();
 
-/* ---------- Intro cinematográfica ---------- */
-(function intro(){
-  const el = document.getElementById('intro');
-  const end = () => { document.body.classList.remove('intro-on'); };
-  if (!el) return end();
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || location.hash.length > 1) { el.remove(); return end(); }
-  const scenes = [...el.querySelectorAll('.sc')], caps = [...el.querySelectorAll('.cp')];
-  const SCENE_AT = [1300, 2950, 4600, 6250], FINAL_AT = 7900, OUT_AT = 9500;
-  const timers = []; let done = false;
-  const at = (ms, fn) => timers.push(setTimeout(fn, ms));
-  function show(i){
-    el.classList.add('open');
-    scenes.forEach((s, j) => { s.classList.toggle('on', j === i); if (j === i) s.classList.add('seen'); });
-    caps.forEach((c, j) => { c.classList.toggle('gone', j < i); c.classList.toggle('on', j === i); });
-  }
-  SCENE_AT.forEach((ms, i) => at(ms, () => show(i)));
-  at(FINAL_AT, () => { el.classList.add('final'); scenes.forEach(s => s.classList.remove('on')); caps.forEach(c => { c.classList.remove('on'); c.classList.add('gone'); }); });
-  function finish(){
-    if (done) return; done = true; timers.forEach(clearTimeout);
-    el.classList.add('out');
-    setTimeout(end, 450);                       // a capa começa a entrar enquanto a cortina sobe
-    setTimeout(() => el.remove(), 1300);
-  }
-  at(OUT_AT, finish);
-  document.getElementById('inSkip').onclick = finish;
-  addEventListener('keydown', e => { if (!done && ['Escape', 'Enter', ' '].includes(e.key)) { e.preventDefault(); finish(); } });
-  setTimeout(() => { if (!done) finish(); }, 15000);
-})();
-
-/* ---------- UI ---------- */
-yr.textContent = new Date().getFullYear();
-addEventListener('scroll', () => hd.classList.toggle('s', scrollY > 10), {passive:true});
-burger.onclick = () => nav.classList.toggle('open');
-nav.querySelectorAll('a').forEach(a => a.onclick = () => nav.classList.remove('open'));
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.1});
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
-form.onsubmit = e => {
-  e.preventDefault();
-  open(wa(`Olá, Berta! Meu nome é ${fName.value}. Procuro: ${fPiece.value || 'conhecer as peças'}. ${fMsg.value}`), '_blank');
-};
-
-/* medalhão 3D da capa: segue o mouse; sozinho, balança devagar */
+/* ---------- intro curta: só na primeira visita da sessão ---------- */
 (function(){
-  const hr = document.querySelector('.hr'), medal = document.querySelector('.medal');
-  const st = {x:0, y:0, tx:0, ty:0, over:false};
-  hr.addEventListener('pointermove', e => { const r = hr.getBoundingClientRect(); st.tx = ((e.clientX - r.left)/r.width - .5)*34; st.ty = -((e.clientY - r.top)/r.height - .5)*30; st.over = true; });
-  hr.addEventListener('pointerleave', () => st.over = false);
-  const t0 = performance.now();
-  (function loop(){
-    requestAnimationFrame(loop);
-    const t = (performance.now() - t0)/1000;
-    const gx = st.over ? st.tx : Math.sin(t*.55)*16, gy = st.over ? st.ty : Math.cos(t*.4)*7;
-    st.x += (gx - st.x)*.07; st.y += (gy - st.y)*.07;
-    medal.style.setProperty('--ry', st.x.toFixed(2) + 'deg'); medal.style.setProperty('--rx', st.y.toFixed(2) + 'deg');
-  })();
+  const el = $('intro');
+  const ready = () => { document.body.classList.remove('intro-on'); document.documentElement.classList.add('ready'); };
+  let seen = false;
+  try { seen = sessionStorage.getItem('berta-intro') === '1'; sessionStorage.setItem('berta-intro', '1'); } catch (e) {}
+  if (seen || location.hash.length > 1 || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.remove(); return requestAnimationFrame(ready); }
+  let done = false;
+  const finish = () => { if (done) return; done = true; el.classList.add('out'); setTimeout(ready, 250); setTimeout(() => el.remove(), 1000); };
+  setTimeout(finish, 1300);
+  el.addEventListener('click', finish);
+  addEventListener('keydown', finish, {once:true});
 })();
 
-/* inclinação 3D nos blocos de foto */
-document.querySelectorAll('.tilt').forEach(t => {
-  const img = t.querySelector('img');
-  t.addEventListener('pointermove', e => {
-    const r = t.getBoundingClientRect();
-    const x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
-    img.style.setProperty('--ry', (x*10) + 'deg'); img.style.setProperty('--rx', (-y*10) + 'deg');
-  });
-  t.addEventListener('pointerleave', () => { img.style.setProperty('--rx','0deg'); img.style.setProperty('--ry','0deg'); });
-});
-
-/* vídeos tocam só quando aparecem na tela */
-const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) v.play().catch(()=>{}); else v.pause(); }), {threshold:.4});
+/* ---------- header, menu, revelações ---------- */
+const hd = $('hd'), fab = $('waFab');
+const onScroll = () => { hd.classList.toggle('s', scrollY > 20); fab.classList.toggle('on', scrollY > innerHeight * .8); };
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+const burger = $('burger');
+const setMenu = open => { document.body.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); };
+burger.onclick = () => setMenu(!document.body.classList.contains('menu-open'));
+document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv,.rv-img').forEach(el => io.observe(el));
+const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); } else v.pause(); }), {threshold:.35});
 document.querySelectorAll('video').forEach(v => vio.observe(v));
 
-/* ---------- Galeria 3D com as fotos reais ---------- */
-const PIECES = [
-  {k:'anel-trevo',        cat:'Anéis',     name:'Anel Trevo',            d:'Fios entrelaçados em formato de trevo, cravejados de pedras brilhantes. Uma joia que começa em um modelo 3D e termina no seu dedo.'},
-  {k:'aliancas-bicolor',  cat:'Alianças',  name:'Alianças Bicolor',      d:'Ouro amarelo e branco combinados, com pedras e gravação personalizada por dentro. Feitas sob medida para o casal.'},
-  {k:'aliancas-ouro',     cat:'Alianças',  name:'Alianças em Ouro',      d:'Alianças de acabamento polido, com opção de pedras e gravação. Peças para atravessar a vida toda.'},
-  {k:'anel-safira',       cat:'Anéis',     name:'Anel Pedra Azul',       d:'Pedra azul central rodeada de pedras brilhantes, com detalhes trabalhados na lateral do aro.'},
-  {k:'anel-granada',      cat:'Anéis',     name:'Anel Pedra Vermelha',   d:'Pedra vermelha com halo de brilhantes e um detalhe personalizado no aro. Criado primeiro em 3D e depois produzido.'},
-  {k:'anel-abraco',       cat:'Anéis',     name:'Anel Abraço',           d:'Duas mãozinhas que se encontram em um abraço. Um presente cheio de significado.'},
-  {k:'anel-coracao',      cat:'Anéis',     name:'Anel Coração com Iniciais', d:'Aro fino com um coração gravado com as iniciais do casal.'},
-  {k:'pingente-barras',   cat:'Pingentes', name:'Pingentes Barra com Nome', d:'Barras gravadas com nomes e pedras de nascimento em cores diferentes. Perfeitas para homenagear quem você ama.'},
-  {k:'pingente-nomes',    cat:'Pingentes', name:'Pingente Corações com Nomes', d:'Corações com os nomes da família e bonequinhos pendurados, um para cada pessoa especial.'},
-  {k:'pets-charms',       cat:'Mini pets', name:'Mini Pets em Ouro',     d:'Miniaturas do seu cachorrinho em ouro, modeladas com detalhes para virar pingente.'}
-];
-const byKey = Object.fromEntries(PIECES.map((p,i) => [p.k, i]));
-const loader = new THREE.TextureLoader();
-const TEX = {};
-PIECES.forEach(p => { const t = loader.load(window.FOTOS[p.k]); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; TEX[p.k] = t; });
+/* ---------- Atelier ---------- */
+const METALS = {
+  amarelo: {n:'Ouro amarelo', g:'linear-gradient(115deg,#8f6c2c,#e8cd86 28%,#b8913f 52%,#f4e3aa 74%,#9d7b36)', e:'rgba(74,48,10,.82)'},
+  branco:  {n:'Ouro branco',  g:'linear-gradient(115deg,#8e9297,#eef0f2 28%,#b8bcc1 52%,#fbfcfc 74%,#9b9fa4)', e:'rgba(52,58,64,.8)'},
+  bicolor: {n:'Bicolor',      g:'linear-gradient(115deg,#9a7731,#ecd28c 24%,#c39d4c 46%,#c9cdd1 54%,#f4f5f6 76%,#9b9fa4)', e:'rgba(62,52,30,.82)'},
+  prata:   {n:'Prata',        g:'linear-gradient(115deg,#7b8086,#dde1e4 28%,#a6abb0 52%,#eff1f3 74%,#868b90)', e:'rgba(44,50,56,.82)'}
+};
+const STONES = {
+  sem:       {n:'Sem pedra'},
+  brilhante: {n:'Pedras brancas', c:'#eef3f8'},
+  azul:      {n:'Pedra azul',     c:'#1f4fa8'},
+  vermelha:  {n:'Pedra vermelha', c:'#9e1b2c'},
+  verde:     {n:'Pedra verde',    c:'#1f7a4c'},
+  mes:       {n:'Pedra do mês'}
+};
+const MONTHS = [['Janeiro','Granada','#7b1e2b'],['Fevereiro','Ametista','#7b4fa0'],['Março','Água-marinha','#7fc4d6'],['Abril','Diamante','#eef3f8'],['Maio','Esmeralda','#1f7a4c'],['Junho','Alexandrita','#6a5a8c'],['Julho','Rubi','#a3122a'],['Agosto','Peridoto','#9cbf3b'],['Setembro','Safira','#1f3f9a'],['Outubro','Turmalina rosa','#e48aa8'],['Novembro','Citrino','#e0a040'],['Dezembro','Topázio azul','#4fa3d1']];
+const PIECE_T = {
+  alianca:  {n:'Aliança',           ph:'Ana & Pedro', size:true},
+  anel:     {n:'Anel',              ph:'A & L',       size:true},
+  pingente: {n:'Pingente com nome', ph:'Sofia',       size:false},
+  pet:      {n:'Mini pet',          ph:'Thor',        size:false}
+};
+const FONTS = {classica:'Clássica', manuscrita:'Manuscrita', moderna:'Moderna'};
+const gem = c => `radial-gradient(circle at 34% 30%,#fff 0 9%,${c} 45%,color-mix(in srgb,${c} 60%,#000) 100%)`;
+const form = $('atelierForm');
 
-function carousel(el, keys, o){
-  const canvas = el.querySelector('canvas');
-  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.outputEncoding = THREE.sRGBEncoding;
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(o.fog, o.D - o.R + 1, o.D + o.R + 1.5);
-  const cam = new THREE.PerspectiveCamera(30, 1, .1, 100);
-  const group = new THREE.Group(); scene.add(group);
-  const n = keys.length, step = Math.PI*2/n;
-  const frameMat = new THREE.MeshBasicMaterial({color:0xfbf8f2});
-  keys.forEach((k, i) => {
-    const card = new THREE.Group();
-    const frame = new THREE.Mesh(new THREE.BoxGeometry(o.S + .1, o.S + .1, .04), frameMat);
-    const pic = new THREE.Mesh(new THREE.PlaneGeometry(o.S, o.S), new THREE.MeshBasicMaterial({map:TEX[k], toneMapped:false}));
-    pic.position.z = .021; card.add(frame, pic);
-    const a = i*step; card.position.set(Math.sin(a)*o.R, 0, Math.cos(a)*o.R); card.rotation.y = a;
-    group.add(card);
-  });
+$('metalOpts').innerHTML = Object.entries(METALS).map(([k, m], i) =>
+  `<label class="opt"><input type="radio" name="metal" value="${k}"${i ? '' : ' checked'}><span><i class="sw" style="--sw:${m.g}"></i>${m.n}</span></label>`).join('');
+$('stoneOpts').innerHTML = Object.entries(STONES).map(([k, s], i) =>
+  `<label class="opt"><input type="radio" name="stone" value="${k}"${i ? '' : ' checked'}><span>${s.c ? `<i class="sw" style="--sw:${gem(s.c)}"></i>` : k === 'mes' ? '<i class="sw" style="--sw:conic-gradient(#7b1e2b,#7b4fa0,#7fc4d6,#1f7a4c,#9cbf3b,#e0a040,#7b1e2b)"></i>' : ''}${s.n}</span></label>`).join('');
+$('month').innerHTML = MONTHS.map(([m, s], i) => `<option value="${i}">${m} · ${s}</option>`).join('');
 
-  const s = {rot:0, vel:0, target:null, drag:false, last:0, mx:0, my:0, idx:0, visible:true, pause:0};
-  const snapTo = i => { // gira até a carta i ficar de frente
-    let t = -i*step; const k = Math.round((s.rot - t)/(Math.PI*2)); s.target = t + k*Math.PI*2;
-  };
-  el.addEventListener('pointerdown', e => { if (e.target.closest('a,button')) return; s.drag = true; s.last = e.clientX; s.target = null; el.setPointerCapture(e.pointerId); });
-  el.addEventListener('pointerup', () => { s.drag = false; if (o.snap) snapTo(((Math.round(-s.rot/step) % n) + n) % n); });
-  el.addEventListener('pointermove', e => {
-    const r = el.getBoundingClientRect(); s.mx = (e.clientX - r.left)/r.width*2 - 1; s.my = (e.clientY - r.top)/r.height*2 - 1;
-    if (s.drag) { s.vel = (e.clientX - s.last)*.008; s.rot += s.vel; s.last = e.clientX; }
-  });
-  el.addEventListener('pointerleave', () => { s.mx = s.my = 0; });
-  new IntersectionObserver(e => s.visible = e[0].isIntersecting).observe(el);
-
-  function resize(){
-    const w = el.clientWidth, h = el.clientHeight;
-    renderer.setSize(w, h, false); cam.aspect = w/h; cam.updateProjectionMatrix();
-    const wide = w/h > 1.1;
-    group.position.x = o.shift && wide ? o.shift : 0;
-    group.position.y = o.shift && !wide ? -1.7 : 0;
-    const f = wide ? 1 : Math.min(1, w/h*1.15);
-    group.scale.setScalar(o.shift ? (wide ? 1 : .8) : f);
-  }
-  addEventListener('resize', resize); resize();
-
-  const clock = new THREE.Clock();
-  (function frame(){
-    requestAnimationFrame(frame);
-    const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
-    if (!s.visible) return;
-    if (!s.drag) {
-      if (s.target !== null) {
-        s.rot += (s.target - s.rot)*Math.min(1, dt*5);
-        if (Math.abs(s.target - s.rot) < .002) { s.rot = s.target; s.target = null; s.pause = t + 3.5; }
-      } else {
-        s.vel *= .95; s.rot += s.vel;
-        if (o.auto && t > s.pause) s.rot += o.auto*dt;
-      }
-    }
-    group.rotation.y = s.rot;
-    group.rotation.x = .08 + s.my*.08;
-    cam.position.set(s.mx*.6, 1.1 - s.my*.4 + Math.sin(t*.6)*.05, o.D);
-    cam.lookAt(0, 0, 0);
-    const idx = ((Math.round(-s.rot/step) % n) + n) % n;
-    if (idx !== s.idx) { s.idx = idx; o.onChange && o.onChange(idx); }
-    renderer.render(scene, cam);
-  })();
-  return {snapTo, state:s, n};
+function photoFor(p, metal, stone){
+  if (p === 'alianca') return metal === 'bicolor' || metal === 'branco' ? 'aliancas-bicolor' : 'aliancas-ouro';
+  if (p === 'anel') return {azul:'anel-safira', vermelha:'anel-granada', sem:'anel-coracao'}[stone] || 'anel-trevo';
+  if (p === 'pingente') return stone === 'sem' ? 'pingente-nomes' : 'pingente-barras';
+  return 'pets-charms';
 }
-
-/* galeria */
-const gal = carousel(viewer, PIECES.map(p => p.k), {S:2.5, R:4.6, D:12.5, fog:0xfaf6ee, snap:true, auto:-.22,
-  onChange: i => show(i)});
-function show(i){
-  const p = PIECES[i];
-  pCat.textContent = p.cat; pName.textContent = p.name; pDesc.textContent = p.d;
-  chips.querySelectorAll('.chip').forEach((c, j) => c.classList.toggle('on', j === i));
-  pCta.href = wa(`Olá, Berta! Tenho interesse em: ${p.name}.`);
-  pCta.target = '_blank';
+let pvOn = $('pvA'), pvOff = $('pvB'), pvSrc = '';
+function setPhoto(src){
+  if (src === pvSrc) return; pvSrc = src;
+  pvOff.onload = () => { pvOff.classList.add('on'); pvOn.classList.remove('on'); [pvOn, pvOff] = [pvOff, pvOn]; };
+  pvOff.src = `fotos/${src}.jpg`;
 }
-PIECES.forEach((p, i) => {
-  const b = document.createElement('button'); b.className = 'chip'; b.textContent = p.name;
-  b.onclick = () => gal.snapTo(i); chips.appendChild(b);
+function state(){
+  const f = new FormData(form);
+  return {piece:f.get('piece'), metal:f.get('metal'), stone:f.get('stone'), month:+f.get('month'), font:f.get('font'),
+          engr:(f.get('engr') || '').trim(), occ:f.get('occ') || '', name:(f.get('name') || '').trim(), size:(f.get('size') || '').trim(), notes:(f.get('notes') || '').trim()};
+}
+function stoneLabel(s){ return s.stone === 'mes' ? `${MONTHS[s.month][1]} (${MONTHS[s.month][0]})` : STONES[s.stone].n; }
+function stoneColor(s){ return s.stone === 'mes' ? MONTHS[s.month][2] : STONES[s.stone].c; }
+function render(){
+  const s = state(), m = METALS[s.metal], t = PIECE_T[s.piece];
+  const plate = $('plate'), txt = $('pvText');
+  plate.style.setProperty('--metal', m.g); plate.style.setProperty('--engr', m.e);
+  txt.className = 'f-' + s.font + (s.engr ? '' : ' ph');
+  txt.textContent = s.engr || t.ph;
+  $('engr').placeholder = 'Ex.: ' + t.ph;
+  $('engrCount').textContent = `${s.engr.length}/22`;
+  $('monthBox').hidden = s.stone !== 'mes';
+  $('sizeBox').style.visibility = t.size ? 'visible' : 'hidden';
+  setPhoto(photoFor(s.piece, s.metal, s.stone));
+  const c = stoneColor(s);
+  const rows = [
+    ['Peça', t.n],
+    ['Metal', `<i class="dot" style="--sw:${m.g}"></i>${m.n}`],
+    ['Pedra', (c ? `<i class="dot" style="--sw:${gem(c)}"></i>` : '') + stoneLabel(s)],
+    ['Gravação', s.engr ? `“${esc(s.engr)}” · ${FONTS[s.font]}` : '—'],
+    ['Ocasião', s.occ || '—']
+  ];
+  $('barTxt').textContent = [t.n, m.n, s.stone === 'sem' ? '' : stoneLabel(s)].filter(Boolean).join(' · ');
+  $('spec').innerHTML = rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+}
+const esc = t => t.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+new IntersectionObserver(es => document.body.classList.toggle('in-atelier', es[0].isIntersecting)).observe($('atelier'));
+form.addEventListener('input', render);
+form.addEventListener('change', render);
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const s = state(), t = PIECE_T[s.piece];
+  const lines = [
+    'Olá, Berta! Montei uma joia no Atelier do site:',
+    `• Peça: ${t.n}`,
+    `• Metal: ${METALS[s.metal].n}`,
+    `• Pedra: ${stoneLabel(s)}`,
+    s.engr ? `• Gravação: "${s.engr}" (letra ${FONTS[s.font].toLowerCase()})` : '• Gravação: sem gravação',
+    s.occ && `• Ocasião: ${s.occ}`,
+    t.size && s.size && `• Aro: ${s.size}`,
+    s.notes && `• Observações: ${s.notes}`,
+    s.name && `\nMeu nome é ${s.name}.`
+  ].filter(Boolean);
+  open(wa(lines.join('\n')), '_blank', 'noopener');
 });
-const goto = i => gal.snapTo(((i % PIECES.length) + PIECES.length) % PIECES.length);
-prev.onclick = () => goto(gal.state.idx - 1);
-next.onclick = () => goto(gal.state.idx + 1);
-document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => setTimeout(() => gal.snapTo(byKey[a.dataset.go]), 400)));
-show(0);
+function preset({piece, metal, stone}){
+  const pick = (n, v) => { const r = form.querySelector(`input[name="${n}"][value="${v}"]`); if (r) r.checked = true; };
+  pick('piece', piece); pick('metal', metal); pick('stone', stone);
+  render();
+  $('atelier').scrollIntoView({behavior:'smooth'});
+}
+document.querySelectorAll('.js-go').forEach(b => b.addEventListener('click', () => preset(b.dataset)));
+render();
+
+/* ---------- galeria em trilho ---------- */
+const PIECES = [
+  {k:'anel-trevo',       cat:'Anéis',     name:'Anel Trevo',                  p:{piece:'anel', metal:'amarelo', stone:'brilhante'}},
+  {k:'aliancas-bicolor', cat:'Alianças',  name:'Alianças Bicolor',            p:{piece:'alianca', metal:'bicolor', stone:'brilhante'}},
+  {k:'anel-safira',      cat:'Anéis',     name:'Anel Pedra Azul',             p:{piece:'anel', metal:'amarelo', stone:'azul'}},
+  {k:'pingente-barras',  cat:'Pingentes', name:'Pingentes Barra com Nome',    p:{piece:'pingente', metal:'amarelo', stone:'mes'}},
+  {k:'aliancas-ouro',    cat:'Alianças',  name:'Alianças em Ouro',            p:{piece:'alianca', metal:'amarelo', stone:'sem'}},
+  {k:'anel-granada',     cat:'Anéis',     name:'Anel Pedra Vermelha',         p:{piece:'anel', metal:'branco', stone:'vermelha'}},
+  {k:'pingente-nomes',   cat:'Pingentes', name:'Pingente Corações com Nomes', p:{piece:'pingente', metal:'amarelo', stone:'sem'}},
+  {k:'anel-abraco',      cat:'Anéis',     name:'Anel Abraço',                 p:{piece:'anel', metal:'amarelo', stone:'sem'}},
+  {k:'anel-coracao',     cat:'Anéis',     name:'Anel Coração com Iniciais',   p:{piece:'anel', metal:'amarelo', stone:'sem'}},
+  {k:'pets-charms',      cat:'Mini pets', name:'Mini Pets em Ouro',           p:{piece:'pet', metal:'amarelo', stone:'sem'}}
+];
+const rail = $('rail');
+rail.innerHTML = PIECES.map((p, i) => `<article class="pc"><figure><img src="fotos/${p.k}.jpg" alt="${p.name}" loading="lazy" draggable="false"></figure><div class="eyebrow cat">${p.cat}</div><h3>${p.name}</h3><button class="link" data-i="${i}">Criar uma assim</button></article>`).join('');
+rail.querySelectorAll('button').forEach(b => b.onclick = () => preset(PIECES[b.dataset.i].p));
+const railStep = () => rail.querySelector('.pc').offsetWidth + parseFloat(getComputedStyle(rail).columnGap);
+$('railPrev').onclick = () => rail.scrollBy({left:-railStep(), behavior:'smooth'});
+$('railNext').onclick = () => rail.scrollBy({left:railStep(), behavior:'smooth'});
+(function(){ // arrastar com o mouse
+  let x0 = 0, s0 = 0, down = false, moved = false;
+  rail.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; x0 = e.clientX; s0 = rail.scrollLeft; });
+  addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - x0; if (Math.abs(dx) > 5) { moved = true; rail.classList.add('drag'); } rail.scrollLeft = s0 - dx; });
+  addEventListener('pointerup', () => { if (!down) return; down = false; rail.classList.remove('drag'); });
+  rail.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+})();
+
+/* ---------- comparador 3D x imagem realista ---------- */
+const cmp = $('compare'), range = cmp.querySelector('input');
+range.addEventListener('input', () => cmp.style.setProperty('--p', range.value + '%'));
+
+/* ---------- contato ---------- */
+$('ctForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = $('cName').value.trim(), msg = $('cMsg').value.trim();
+  open(wa(`Olá, Berta!${name ? ` Meu nome é ${name}.` : ''} ${$('cWhat').value}.${msg ? `\n${msg}` : ''}`), '_blank', 'noopener');
+});
 </script>
 </body>
 </html>
