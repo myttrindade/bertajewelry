@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Berta Jewelry">
 <meta property="og:url" content="https://bertajewelry.vercel.app/">
 <meta property="og:title" content="Berta Jewelry — Joias feitas para uma só história">
-<meta property="og:description" content="Alianças, anéis e pingentes desenhados sob medida em Santos. Crie a sua joia no site.">
+<meta property="og:description" content="Alianças, anéis e pingentes desenhados sob medida em Santos. Conheça os modelos e peça o seu orçamento.">
 <meta property="og:image" content="https://bertajewelry.vercel.app/fotos/anel-trevo.jpg">
 <meta property="og:image:width" content="1080">
 <meta property="og:image:height" content="1080">
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="fotos/aliancas-ouro.jpg" fetchpriority="high">
 <script>/* decide já no carregamento se a abertura aparece, para a capa não piscar antes */
 try { if (sessionStorage.getItem('berta-open') !== '1' && location.hash.length < 2 && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('opening'); } catch (e) {}</script>
@@ -30,11 +30,11 @@ try { if (sessionStorage.getItem('berta-open') !== '1' && location.hash.length <
   --em:#0f4a3f; --em-d:#0a2e27;
   --serif:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
   --g:clamp(16px,2.6vw,40px);
-  --top:156px;
+  --top:164px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:130px;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
 body{font-family:var(--serif);font-size:1rem;line-height:1.6;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button,input,select{font:inherit;color:inherit}
@@ -61,20 +61,26 @@ img,video{display:block;max-width:100%}
 .btn.white:hover{background:transparent;color:#fff}
 
 /* faixa de aviso */
-.notice{display:block;background:#efefed;color:var(--ink);text-align:center;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:34px;height:34px;padding:0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.notice{display:block;background:var(--ink);color:#fff;text-align:center;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:34px;height:34px;padding:0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:height .4s var(--ease)}
 
-/* topo em duas linhas */
-.hd{position:sticky;top:0;z-index:100;background:#fff;transition:box-shadow .4s}
+/* topo em duas linhas; ao rolar, fica só o BERTA JEWELRY */
+.hd{position:fixed;inset:0 0 auto;z-index:100;background:#fff;transition:box-shadow .4s}
+.hd-space{height:var(--top)}
 .hd.s{box-shadow:0 1px 0 var(--line)}
-.hd-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;padding:0 var(--g)}
+.hd-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px;padding:0 var(--g);transition:height .4s var(--ease)}
 .hd-l,.hd-r{display:flex;align-items:center;gap:22px;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.hd-l>*,.hd-r>*{transition:opacity .3s}
 .hd-r{justify-content:flex-end}
 .hd-l a:hover,.hd-r a:hover{opacity:.6}
 .ico{width:20px;height:20px;display:block}
 .logo{text-align:center;line-height:1;color:var(--ink)}
 .logo b{display:block;font-weight:400;font-size:2rem;letter-spacing:.34em;text-indent:.34em}
-.logo small{display:block;margin-top:5px;font-size:.5rem;letter-spacing:.6em;text-indent:.6em;color:var(--mute)}
-.hd-nav{display:flex;justify-content:center;gap:clamp(18px,2.6vw,40px);height:46px;align-items:center;border-bottom:1px solid var(--line)}
+.logo small{display:block;margin-top:8px;font-size:.8rem;font-weight:500;letter-spacing:.52em;text-indent:.52em;color:var(--ink)}
+.hd-nav{display:flex;justify-content:center;gap:clamp(18px,2.6vw,40px);height:46px;align-items:center;border-bottom:1px solid var(--line);overflow:hidden;transition:height .4s var(--ease),border-color .4s}
+.hd.s .notice{height:0}
+.hd.s .hd-row{height:70px}
+.hd.s .hd-nav{height:0;border-color:transparent}
+.hd.s .hd-r>*,.hd.s .hd-l>*:not(.burger){opacity:0;pointer-events:none}
 .hd-nav a{position:relative;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding:14px 0}
 .hd-nav a::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:var(--ink);transform:scaleX(0);transition:transform .35s}
 .hd-nav a:hover::after{transform:scaleX(1)}
@@ -162,46 +168,28 @@ section{padding:clamp(70px,8vw,110px) 0}
 .camp h2 em{font-style:italic}
 .camp p{font-size:1.1rem;max-width:34ch}
 
-/* atelier no formato de página de produto */
+/* modelos no formato de página de produto */
 .at-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
-.pv{position:relative;aspect-ratio:1;overflow:hidden;background:var(--grey);position:sticky;top:140px}
-.pv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s}
+.pv{position:relative;aspect-ratio:1;overflow:hidden;background:var(--grey);position:sticky;top:90px}
+.pv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
 .pv img.on{opacity:1}
-.pv-tag{position:absolute;z-index:2;left:14px;top:14px;padding:6px 10px;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#fff;color:var(--ink)}
-.plate{position:absolute;z-index:2;left:9%;right:9%;bottom:7%;padding:14px 22px 16px;border-radius:999px;background:var(--metal);box-shadow:0 18px 40px -16px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 6px rgba(0,0,0,.18);text-align:center;transition:background .6s}
-.plate span{display:block;min-height:1.3em;color:var(--engr);text-shadow:0 1px 0 rgba(255,255,255,.55),0 -1px 0 rgba(0,0,0,.22);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.plate span.ph{opacity:.5}
-.f-classica{font-style:italic;font-size:1.55rem;line-height:1.3}
-.f-manuscrita{font-family:'Pinyon Script',cursive;font-size:2rem;line-height:1.15}
-.f-moderna{font-weight:600;font-size:1rem;letter-spacing:.32em;text-transform:uppercase;line-height:2.1}
 .at-side .crumb{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
 .at-side h2{margin:14px 0 10px}
-.at-side .sub{color:var(--mute);margin-bottom:26px}
-.row{padding:20px 0;border-top:1px solid var(--line)}
-.row-h{display:flex;justify-content:space-between;gap:16px;margin-bottom:14px}
-.row-h .val{font-size:.95rem;color:var(--mute)}
-.opts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.opt{position:relative;cursor:pointer}
-.opt input{position:absolute;opacity:0;pointer-events:none}
-.opt .tx{display:inline-block;padding:10px 16px;border:1px solid var(--line);font-size:.92rem;transition:border-color .3s}
-.opt:hover .tx{border-color:#9a9a9a}
-.opt input:checked+.tx{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.opt .sw{display:block;width:32px;height:32px;border-radius:50%;background:var(--sw);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);outline:1px solid transparent;outline-offset:3px;transition:outline-color .3s}
-.opt input:checked+.sw{outline-color:var(--ink)}
-.opt input:focus-visible+.tx,.opt input:focus-visible+.sw{outline:1px dashed var(--ink);outline-offset:4px}
-.sw.none{background:#fff;position:relative}
-.sw.none::after{content:"";position:absolute;left:6px;right:6px;top:50%;height:1px;background:var(--mute);transform:rotate(-45deg)}
-.month{margin-top:14px}
-.month[hidden]{display:none}
+.at-side .sub{color:var(--mute)}
+.mthumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:26px 0 30px}
+.mt{aspect-ratio:1;padding:0;border:0;background:var(--grey);cursor:pointer;overflow:hidden;outline:1px solid transparent;outline-offset:3px;transition:outline-color .3s}
+.mt img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .3s,transform .6s var(--ease)}
+.mt:hover img{opacity:1;transform:scale(1.05)}
+.mt[aria-pressed="true"]{outline-color:var(--ink)}
+.mt[aria-pressed="true"] img{opacity:1}
+.mdet{display:grid;gap:8px;justify-items:start;border-top:1px solid var(--line);padding-top:24px}
+.mname{font-size:1.15rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.mdet .pr{color:var(--ink);margin:4px 0 18px}
+.mdet .btn{width:100%}
+.mdet .note{font-size:.88rem;color:var(--mute);text-align:center;width:100%;margin-top:4px}
 .field{width:100%;background:#fff;border:1px solid var(--line);padding:13px 14px;font-size:1rem;color:var(--ink);border-radius:0;outline:none;transition:border-color .3s}
 .field:focus{border-color:var(--ink)}
 .field::placeholder{color:#9a9a9a}
-select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230a0a0a'/%3E%3C/svg%3E") no-repeat right 14px center}
-.fonts{margin-top:12px}
-.fonts .tx{font-size:1rem}
-.at-cta{display:grid;gap:12px;padding-top:24px;border-top:1px solid var(--line)}
-.at-cta .btn{width:100%}
-.at-cta p{font-size:.88rem;color:var(--mute);text-align:center}
 
 /* do 3D à joia */
 .compare{position:relative;max-width:900px;margin:0 auto;aspect-ratio:5/4;overflow:hidden;background:#0b0f0e;user-select:none;touch-action:pan-y}
@@ -267,6 +255,8 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
   .hd-l .hide-m,.hd-r .hide-m,.hd-nav{display:none}
   .burger{display:block}
   .logo b{font-size:1.5rem}
+  .logo small{font-size:.62rem;margin-top:6px}
+  .hd.s .hd-row{height:64px}
   .hd-l{gap:16px}
   .rail{grid-auto-columns:72%;gap:12px}
   .arw{display:none}
@@ -297,9 +287,8 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
 </head>
 <body>
 
-<a class="notice js-wa" href="#" data-msg="Olá, Berta! Vim pelo site e gostaria de um orçamento.">Orçamento sem compromisso pelo WhatsApp &nbsp;|&nbsp; Gravação personalizada em todas as peças</a>
-
 <header class="hd" id="hd">
+  <a class="notice js-wa" href="#" data-msg="Olá, Berta! Vim pelo site e gostaria de um orçamento.">Orçamento sem compromisso pelo WhatsApp &nbsp;|&nbsp; Gravação personalizada em todas as peças</a>
   <div class="hd-row">
     <div class="hd-l">
       <button class="burger" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i></button>
@@ -309,7 +298,7 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
     </div>
     <a href="#top" class="logo" aria-label="Berta Jewelry, início"><b>BERTA</b><small>JEWELRY</small></a>
     <div class="hd-r">
-      <a class="hide-m" href="#atelier">Crie a sua</a>
+      <a class="hide-m" href="#modelos">Modelos</a>
       <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
       <a class="js-wa" href="#" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.2c.3 2.4 2.6 4.7 5 5l1-1.1-1.6-.9-.8.8c-1-.5-1.9-1.4-2.4-2.4l.8-.8-.9-1.6z" fill="currentColor" stroke="none"/></svg></a>
     </div>
@@ -318,18 +307,19 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
     <a href="#pecas">Peças da casa</a>
     <a href="#aliancas">Alianças</a>
     <a href="#colecoes">Coleções</a>
-    <a href="#atelier">Crie a sua joia</a>
+    <a href="#modelos">Modelos</a>
     <a href="#processo">Do 3D à joia</a>
     <a href="#loja">A Maison</a>
     <a href="#duvidas">Dúvidas</a>
   </nav>
 </header>
+<div class="hd-space" aria-hidden="true"></div>
 
 <div class="menu" id="menu">
   <a class="it" href="#pecas">Peças da casa</a>
   <a class="it" href="#aliancas">Alianças</a>
   <a class="it" href="#colecoes">Coleções</a>
-  <a class="it" href="#atelier">Crie a sua joia</a>
+  <a class="it" href="#modelos">Modelos</a>
   <a class="it" href="#processo">Do 3D à joia</a>
   <a class="it" href="#loja">A Maison</a>
   <a class="it" href="#duvidas">Dúvidas</a>
@@ -351,7 +341,7 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
         <h2>Joias feitas para uma só história</h2>
         <p>Alianças, anéis e pingentes desenhados sob medida, em Santos.</p>
         <div class="acts">
-          <a class="btn" href="#atelier">Crie a sua joia</a>
+          <a class="btn" href="#modelos">Ver modelos</a>
           <a class="u js-wa" href="#" data-msg="Olá, Berta! Vim pelo site e gostaria de um orçamento.">Orçamento no WhatsApp</a>
         </div>
       </div>
@@ -363,7 +353,7 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
     <div class="w">
       <div class="head rv">
         <h2 class="t-sec">Peças da casa</h2>
-        <a class="u" href="#atelier">Descubra como personalizar a sua</a>
+        <a class="u" href="#modelos">Ver todos os modelos</a>
       </div>
       <div class="car rv">
         <button class="arw l" id="railPrev" aria-label="Anterior">&lsaquo;</button>
@@ -391,25 +381,25 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
       <div class="tiles two">
         <article class="tile rv">
           <figure><img src="fotos/pingente-nomes.jpg" alt="Pingente de corações com nomes" loading="lazy"></figure>
-          <div class="txt"><h3 class="t-sec">Pingentes com nome</h3><p class="sub">Os nomes de quem você ama, em ouro.</p><button class="u js-go" data-piece="pingente" data-metal="amarelo" data-stone="sem">Personalize o seu</button></div>
+          <div class="txt"><h3 class="t-sec">Pingentes com nome</h3><p class="sub">Os nomes de quem você ama, em ouro.</p><button class="u js-go" data-model="pingente-nomes">Ver o modelo</button></div>
         </article>
         <article class="tile rv">
           <figure><img src="fotos/anel-trevo.jpg" alt="Anel trevo cravejado" loading="lazy"></figure>
-          <div class="txt"><h3 class="t-sec">Anéis</h3><p class="sub">Trevos, solitários e pedras coloridas.</p><button class="u js-go" data-piece="anel" data-metal="amarelo" data-stone="brilhante">Personalize o seu</button></div>
+          <div class="txt"><h3 class="t-sec">Anéis</h3><p class="sub">Trevos, solitários e pedras coloridas.</p><button class="u js-go" data-model="anel-trevo">Ver o modelo</button></div>
         </article>
       </div>
       <div class="tiles three" style="margin-top:clamp(50px,6vw,80px)">
         <article class="tile rv">
           <figure><img src="fotos/pets-charms.jpg" alt="Miniaturas de cachorros em ouro" loading="lazy"></figure>
-          <div class="txt"><h3 class="t-sec">Mini pets</h3><p class="sub">O seu companheiro eternizado em ouro.</p><a class="u js-wa" href="#" data-msg="Olá, Berta! Gostaria de um orçamento de mini pet em ouro.">Conheça</a></div>
+          <div class="txt"><h3 class="t-sec">Mini pets</h3><p class="sub">O seu companheiro eternizado em ouro.</p><button class="u js-go" data-model="pets-charms">Ver o modelo</button></div>
         </article>
         <article class="tile rv">
           <figure><img src="fotos/anel-granada.jpg" alt="Anel com pedra vermelha" loading="lazy"></figure>
-          <div class="txt"><h3 class="t-sec">Pedras coloridas</h3><p class="sub">Azul, vermelha, verde ou a sua preferida.</p><button class="u js-go" data-piece="anel" data-metal="branco" data-stone="vermelha">Conheça</button></div>
+          <div class="txt"><h3 class="t-sec">Pedras coloridas</h3><p class="sub">Azul, vermelha, verde ou a sua preferida.</p><button class="u js-go" data-model="anel-granada">Ver o modelo</button></div>
         </article>
         <article class="tile rv">
           <figure><img src="fotos/pingente-barras.jpg" alt="Pingentes barra com nomes e pedras" loading="lazy"></figure>
-          <div class="txt"><h3 class="t-sec">Pedra do mês</h3><p class="sub">A pedra de nascimento de cada pessoa.</p><button class="u js-go" data-piece="pingente" data-metal="amarelo" data-stone="mes">Conheça</button></div>
+          <div class="txt"><h3 class="t-sec">Pedra do mês</h3><p class="sub">A pedra de nascimento de cada pessoa.</p><button class="u js-go" data-model="pingente-barras">Ver o modelo</button></div>
         </article>
       </div>
     </div>
@@ -420,53 +410,30 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
     <img src="fotos/anel-safira.jpg" alt="" loading="lazy">
     <div class="in rv">
       <h2>Feita para <em>você</em></h2>
-      <p>Escolha o metal, a pedra e a gravação. Nós transformamos em joia.</p>
-      <a class="btn white" href="#atelier">Crie a sua joia</a>
+      <p>Escolha o modelo. Metal, pedra e gravação, a gente combina com você.</p>
+      <a class="btn white" href="#modelos">Ver modelos</a>
     </div>
   </section>
 
-  <!-- atelier -->
-  <section id="atelier">
+  <!-- modelos: clique em um e ele aparece grande -->
+  <section id="modelos">
     <div class="w at-grid">
-      <div class="pv rv" id="pv">
-        <img alt="" id="pvA"><img alt="" id="pvB">
-        <span class="pv-tag">Peça de referência</span>
-        <div class="plate" id="plate"><span id="pvText"></span></div>
+      <div class="pv rv"><img alt="" id="pvA"><img alt="" id="pvB"></div>
+
+      <div class="at-side rv">
+        <span class="crumb">Início / Modelos</span>
+        <h2 class="t-sec">Nossos modelos</h2>
+        <p class="sub">Clique em um modelo para ver de perto. Todos são feitos sob encomenda.</p>
+        <div class="mthumbs" id="mThumbs"></div>
+        <div class="mdet">
+          <span class="crumb" id="mCat"></span>
+          <h3 class="mname" id="mName"></h3>
+          <p class="sub" id="mDesc"></p>
+          <div class="pr">Sob encomenda</div>
+          <a class="btn" id="mCta" href="#" target="_blank" rel="noopener">Pedir orçamento deste modelo</a>
+          <p class="note">Metal, pedras e gravação são combinados com você no atendimento.</p>
+        </div>
       </div>
-
-      <form class="at-side rv" id="atelierForm" novalidate>
-        <span class="crumb">Início / Atelier Berta</span>
-        <h2 class="t-sec">Crie a sua joia</h2>
-        <p class="sub">Monte a peça e receba o orçamento pelo WhatsApp.</p>
-
-        <div class="row">
-          <div class="row-h"><span class="cap">Peça</span><span class="val" id="vPiece"></span></div>
-          <div class="opts" id="pieceOpts"></div>
-        </div>
-        <div class="row">
-          <div class="row-h"><span class="cap">Metal</span><span class="val" id="vMetal"></span></div>
-          <div class="opts" id="metalOpts"></div>
-        </div>
-        <div class="row">
-          <div class="row-h"><span class="cap">Pedra</span><span class="val" id="vStone"></span></div>
-          <div class="opts" id="stoneOpts"></div>
-          <div class="month" id="monthBox" hidden><select class="field" id="month" name="month" aria-label="Mês de nascimento"></select></div>
-        </div>
-        <div class="row">
-          <div class="row-h"><label class="cap" for="engr">Gravação</label><span class="val" id="engrCount">0/22</span></div>
-          <input class="field" id="engr" name="engr" maxlength="22" autocomplete="off">
-          <div class="opts fonts">
-            <label class="opt"><input type="radio" name="font" value="classica" checked><span class="tx f-classica" style="font-size:1.05rem">Clássica</span></label>
-            <label class="opt"><input type="radio" name="font" value="manuscrita"><span class="tx f-manuscrita" style="font-size:1.35rem;line-height:1.2">Manuscrita</span></label>
-            <label class="opt"><input type="radio" name="font" value="moderna"><span class="tx f-moderna" style="font-size:.7rem;line-height:1.9">Moderna</span></label>
-          </div>
-        </div>
-
-        <div class="at-cta">
-          <button class="btn" type="submit">Pedir orçamento desta joia</button>
-          <p>Abre o WhatsApp com o resumo da sua peça. Sem compromisso.</p>
-        </div>
-      </form>
     </div>
   </section>
 
@@ -549,7 +516,7 @@ select.field{appearance:none;cursor:pointer;background:#fff url("data:image/svg+
   <div class="w ft-cols">
     <div><h4>Atendimento</h4><ul><li><a class="js-wa" href="#">WhatsApp (13) 99109-7122</a></li><li><a class="js-wa" href="#" data-msg="Olá, Berta! Gostaria de agendar uma visita à loja.">Agendar visita</a></li><li><a href="#duvidas">Dúvidas frequentes</a></li></ul></div>
     <div><h4>A Maison</h4><ul><li><a href="#loja">A loja</a></li><li><a href="#processo">Do 3D à joia</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Super+Centro+Boqueir%C3%A3o+Santos" target="_blank" rel="noopener">Como chegar</a></li></ul></div>
-    <div><h4>Coleções</h4><ul><li><a href="#aliancas">Alianças</a></li><li><a href="#colecoes">Anéis e pingentes</a></li><li><a href="#atelier">Crie a sua joia</a></li></ul></div>
+    <div><h4>Coleções</h4><ul><li><a href="#aliancas">Alianças</a></li><li><a href="#colecoes">Anéis e pingentes</a></li><li><a href="#modelos">Modelos</a></li></ul></div>
     <div><h4>Siga a Berta</h4><div class="soc">
       <a href="https://instagram.com/bertajewelry_santos" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
       <a class="js-wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.2c.3 2.4 2.6 4.7 5 5l1-1.1-1.6-.9-.8.8c-1-.5-1.9-1.4-2.4-2.4l.8-.8-.9-1.6z" fill="currentColor" stroke="none"/></svg></a>
@@ -582,7 +549,7 @@ const PIECES = [
   {k:'pets-charms',      name:'Mini Pets em Ouro',           d:'O seu cachorrinho em miniatura',  p:{piece:'pet', metal:'amarelo', stone:'sem'}}
 ];
 const rail = $('rail');
-rail.innerHTML = PIECES.map((p, i) => `<article class="card"><figure><img src="fotos/${p.k}.jpg" alt="${p.name}" loading="lazy"></figure><h3>${p.name}</h3><p>${p.d}</p><div class="pr">Sob encomenda</div><a class="btn out js-wa" href="#" data-msg="Olá, Berta! Gostaria de um orçamento de: ${p.name}.">Pedir orçamento</a><button class="u js-preset" data-i="${i}" style="margin-top:12px;font-size:.88rem">Personalizar</button></article>`).join('');
+rail.innerHTML = PIECES.map((p, i) => `<article class="card"><figure><img src="fotos/${p.k}.jpg" alt="${p.name}" loading="lazy"></figure><h3>${p.name}</h3><p>${p.d}</p><div class="pr">Sob encomenda</div><a class="btn out js-wa" href="#" data-msg="Olá, Berta! Gostaria de um orçamento de: ${p.name}.">Pedir orçamento</a><button class="u js-preset" data-i="${i}" style="margin-top:12px;font-size:.88rem">Ver de perto</button></article>`).join('');
 const railStep = () => rail.querySelector('.card').offsetWidth + 20;
 $('railPrev').onclick = () => rail.scrollBy({left:-railStep()});
 $('railNext').onclick = () => rail.scrollBy({left:railStep()});
@@ -662,94 +629,34 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
 const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); } else v.pause(); }), {threshold:.35});
 document.querySelectorAll('video').forEach(v => vio.observe(v));
 
-/* ---------- Atelier ---------- */
-const PIECES_T = {
-  alianca:  {n:'Aliança',           ph:'Ana & Pedro'},
-  anel:     {n:'Anel',              ph:'A & L'},
-  pingente: {n:'Pingente com nome', ph:'Sofia'},
-  pet:      {n:'Mini pet',          ph:'Thor'}
-};
-const METALS = {
-  amarelo: {n:'Ouro amarelo', g:'linear-gradient(115deg,#8f6c2c,#e8cd86 28%,#b8913f 52%,#f4e3aa 74%,#9d7b36)', e:'rgba(74,48,10,.82)'},
-  branco:  {n:'Ouro branco',  g:'linear-gradient(115deg,#8e9297,#eef0f2 28%,#b8bcc1 52%,#fbfcfc 74%,#9b9fa4)', e:'rgba(52,58,64,.8)'},
-  bicolor: {n:'Bicolor',      g:'linear-gradient(115deg,#9a7731,#ecd28c 24%,#c39d4c 46%,#c9cdd1 54%,#f4f5f6 76%,#9b9fa4)', e:'rgba(62,52,30,.82)'},
-  prata:   {n:'Prata',        g:'linear-gradient(115deg,#7b8086,#dde1e4 28%,#a6abb0 52%,#eff1f3 74%,#868b90)', e:'rgba(44,50,56,.82)'}
-};
-const STONES = {
-  sem:       {n:'Sem pedra'},
-  brilhante: {n:'Pedras brancas', c:'#eef3f8'},
-  azul:      {n:'Pedra azul',     c:'#1f4fa8'},
-  vermelha:  {n:'Pedra vermelha', c:'#9e1b2c'},
-  verde:     {n:'Pedra verde',    c:'#1f7a4c'},
-  mes:       {n:'Pedra do mês'}
-};
-const MONTHS = [['Janeiro','Granada','#7b1e2b'],['Fevereiro','Ametista','#7b4fa0'],['Março','Água-marinha','#7fc4d6'],['Abril','Diamante','#eef3f8'],['Maio','Esmeralda','#1f7a4c'],['Junho','Alexandrita','#6a5a8c'],['Julho','Rubi','#a3122a'],['Agosto','Peridoto','#9cbf3b'],['Setembro','Safira','#1f3f9a'],['Outubro','Turmalina rosa','#e48aa8'],['Novembro','Citrino','#e0a040'],['Dezembro','Topázio azul','#4fa3d1']];
-const FONTS = {classica:'Clássica', manuscrita:'Manuscrita', moderna:'Moderna'};
-const gem = c => `radial-gradient(circle at 34% 30%,#fff 0 9%,${c} 45%,color-mix(in srgb,${c} 60%,#000) 100%)`;
-const form = $('atelierForm');
-
-$('pieceOpts').innerHTML = Object.entries(PIECES_T).map(([k, p], i) =>
-  `<label class="opt"><input type="radio" name="piece" value="${k}"${i ? '' : ' checked'}><span class="tx">${p.n}</span></label>`).join('');
-$('metalOpts').innerHTML = Object.entries(METALS).map(([k, m], i) =>
-  `<label class="opt" title="${m.n}"><input type="radio" name="metal" value="${k}"${i ? '' : ' checked'} aria-label="${m.n}"><span class="sw" style="--sw:${m.g}"></span></label>`).join('');
-$('stoneOpts').innerHTML = Object.entries(STONES).map(([k, s], i) => {
-  const sw = s.c ? `style="--sw:${gem(s.c)}"` : k === 'mes' ? 'style="--sw:conic-gradient(#7b1e2b,#7b4fa0,#7fc4d6,#1f7a4c,#9cbf3b,#e0a040,#7b1e2b)"' : '';
-  return `<label class="opt" title="${s.n}"><input type="radio" name="stone" value="${k}"${i ? '' : ' checked'} aria-label="${s.n}"><span class="sw${k === 'sem' ? ' none' : ''}" ${sw}></span></label>`;
-}).join('');
-$('month').innerHTML = MONTHS.map(([m, s], i) => `<option value="${i}">${m} · ${s}</option>`).join('');
-
-function photoFor(p, metal, stone){
-  if (p === 'alianca') return metal === 'bicolor' || metal === 'branco' ? 'aliancas-bicolor' : 'aliancas-ouro';
-  if (p === 'anel') return {azul:'anel-safira', vermelha:'anel-granada', sem:'anel-coracao'}[stone] || 'anel-trevo';
-  if (p === 'pingente') return stone === 'sem' ? 'pingente-nomes' : 'pingente-barras';
-  return 'pets-charms';
-}
-let pvOn = $('pvA'), pvOff = $('pvB'), pvSrc = '';
-function setPhoto(src){
-  if (src === pvSrc) return; pvSrc = src;
+/* ---------- Modelos: clique em um modelo e ele aparece grande ---------- */
+const catOf = k => k.startsWith('alianca') ? 'Alianças' : k.startsWith('anel') ? 'Anéis' : k.startsWith('pingente') ? 'Pingentes' : 'Mini pets';
+const mThumbs = $('mThumbs');
+mThumbs.innerHTML = PIECES.map((p, i) => `<button class="mt" type="button" data-i="${i}" aria-label="${p.name}" aria-pressed="false"><img src="fotos/${p.k}.jpg" alt="" loading="lazy"></button>`).join('');
+let pvOn = $('pvA'), pvOff = $('pvB'), cur = -1;
+function showModel(i){
+  if (i < 0 || i === cur) return; cur = i;
+  const p = PIECES[i];
   pvOff.onload = () => { pvOff.classList.add('on'); pvOn.classList.remove('on'); [pvOn, pvOff] = [pvOff, pvOn]; };
-  pvOff.src = `fotos/${src}.jpg`;
+  pvOff.alt = p.name; pvOff.src = `fotos/${p.k}.jpg`;
+  $('mCat').textContent = catOf(p.k); $('mName').textContent = p.name; $('mDesc').textContent = p.d;
+  $('mCta').href = wa(`Olá, Berta! Gostaria de um orçamento do modelo: ${p.name}.`);
+  mThumbs.querySelectorAll('.mt').forEach((b, j) => b.setAttribute('aria-pressed', j === i));
 }
-function state(){
-  const f = new FormData(form);
-  return {piece:f.get('piece'), metal:f.get('metal'), stone:f.get('stone'), month:+f.get('month'), font:f.get('font'), engr:(f.get('engr') || '').trim()};
-}
-const stoneLabel = s => s.stone === 'mes' ? `${MONTHS[s.month][1]} (${MONTHS[s.month][0]})` : STONES[s.stone].n;
-function render(){
-  const s = state(), m = METALS[s.metal], t = PIECES_T[s.piece];
-  const plate = $('plate'), txt = $('pvText');
-  plate.style.setProperty('--metal', m.g); plate.style.setProperty('--engr', m.e);
-  txt.className = 'f-' + s.font + (s.engr ? '' : ' ph');
-  txt.textContent = s.engr || t.ph;
-  $('engr').placeholder = 'Ex.: ' + t.ph;
-  $('engrCount').textContent = `${s.engr.length}/22`;
-  $('vPiece').textContent = t.n; $('vMetal').textContent = m.n; $('vStone').textContent = stoneLabel(s);
-  $('monthBox').hidden = s.stone !== 'mes';
-  setPhoto(photoFor(s.piece, s.metal, s.stone));
-}
-form.addEventListener('input', render);
-form.addEventListener('change', render);
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const s = state();
-  const lines = [
-    'Olá, Berta! Criei uma joia no site e gostaria de um orçamento:',
-    `• Peça: ${PIECES_T[s.piece].n}`,
-    `• Metal: ${METALS[s.metal].n}`,
-    `• Pedra: ${stoneLabel(s)}`,
-    s.engr ? `• Gravação: "${s.engr}" (letra ${FONTS[s.font].toLowerCase()})` : '• Gravação: sem gravação'
-  ];
-  open(wa(lines.join('\n')), '_blank', 'noopener');
+mThumbs.addEventListener('click', e => {
+  const b = e.target.closest('.mt'); if (!b) return;
+  showModel(+b.dataset.i);
+  // no celular a foto grande fica acima das miniaturas: sobe até ela se estiver fora da tela
+  const pv = document.querySelector('.pv'), r = pv.getBoundingClientRect();
+  if (r.top < 60 || r.bottom > innerHeight) scrollTo({top: scrollY + r.top - 80, behavior: REDUCED ? 'auto' : 'smooth'});
 });
-function preset({piece, metal, stone}){
-  const pick = (n, v) => { const r = form.querySelector(`input[name="${n}"][value="${v}"]`); if (r) r.checked = true; };
-  pick('piece', piece); pick('metal', metal); pick('stone', stone);
-  render();
-  $('atelier').scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth'});
+function goModel(k){
+  showModel(PIECES.findIndex(p => p.k === k));
+  $('modelos').scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth'});
 }
-document.querySelectorAll('.js-go').forEach(b => b.addEventListener('click', () => preset(b.dataset)));
-rail.querySelectorAll('.js-preset').forEach(b => b.addEventListener('click', () => preset(PIECES[b.dataset.i].p)));
-render();
+document.querySelectorAll('.js-go').forEach(b => b.addEventListener('click', () => goModel(b.dataset.model)));
+rail.querySelectorAll('.js-preset').forEach(b => b.addEventListener('click', () => goModel(PIECES[b.dataset.i].k)));
+showModel(0);
 
 /* ---------- comparador 3D x imagem realista ---------- */
 const cmp = $('compare'), range = cmp.querySelector('input');
