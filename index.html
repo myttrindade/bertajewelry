@@ -107,9 +107,10 @@ html.opening .hero-word tspan:nth-child(5){animation-delay:.6s,1.45s}
 @keyframes ink{to{fill:var(--ink);stroke-width:0}}
 .hero-img{position:absolute;inset:0;clip-path:inset(calc((1 - var(--p)) * 21svh) calc((1 - var(--p)) * 34vw));opacity:0;transition:opacity 1.2s .3s}
 .ready .hero-img{opacity:1}
-html.opening .hero-img{opacity:0;transition:opacity .6s}
+html.opening .hero-img{opacity:0;transition:opacity 1s ease}
 html.opening.img-in .hero-img{opacity:1}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:55% 50%;transform:scale(calc(1.3 - var(--p) * .3))}
+/* a joia entra translúcida, sem cor e desfocada sobre o nome, e ganha cor e nitidez conforme cresce */
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:55% 50%;transform:scale(calc(1.3 - var(--p) * .3));opacity:calc(.22 + var(--p) * .78);filter:grayscale(calc(1 - var(--p))) blur(calc((1 - var(--p)) * 5px))}
 .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.08),transparent 40%,rgba(0,0,0,.5));opacity:var(--p)}
 .hero-side{position:absolute;bottom:30px;left:var(--g);right:var(--g);display:flex;justify-content:space-between;gap:20px;color:var(--ink);opacity:calc(1 - var(--p) * 3)}
 .hero-cap{position:absolute;left:var(--g);right:var(--g);bottom:clamp(30px,7vh,70px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;color:#fff;opacity:calc((var(--p) - .62) * 3);transform:translateY(calc((1 - var(--p)) * 40px));pointer-events:none}
@@ -548,8 +549,8 @@ const setP = p => { hero.style.setProperty('--p', p.toFixed(4)); hero.classList.
   if (!html.classList.contains('opening') || scrollY > 0) { html.classList.remove('opening'); setP(1); return requestAnimationFrame(ready); }
   try { sessionStorage.setItem('berta-open', '1'); } catch (e) {}
 
-  const IMG_AT = 1900, OPEN_AT = 2500, DUR = 1600;
-  const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
+  const IMG_AT = 1700, OPEN_AT = 2400, DUR = 2000;
+  const ease = t => -(Math.cos(Math.PI * t) - 1) / 2;   // suave do começo ao fim, sem tranco no meio
   let done = false, raf = 0, quiet = 0;
   setP(0); requestAnimationFrame(ready);
   document.body.classList.add('locked');
