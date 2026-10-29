@@ -22,6 +22,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="fotos/aliancas-ouro.jpg" fetchpriority="high">
+<script>/* decide já no carregamento se a abertura aparece, para a capa não piscar antes */
+try { if (sessionStorage.getItem('berta-open') !== '1' && location.hash.length < 2 && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('opening'); } catch (e) {}</script>
 <style>
 :root{
   --bg:#ffffff; --alt:#f4f2ee; --ink:#0b0b0b; --text:#1c1c1c; --mute:#767676; --line:rgba(11,11,11,.12);
@@ -53,12 +55,8 @@ em{font-style:italic}
 .ln:hover::after{transform:scaleX(0)}
 .ln.mute{color:var(--mute)}
 
-/* intro */
-#intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#fff;transition:opacity .7s ease;cursor:pointer}
-#intro.out{opacity:0;pointer-events:none}
-#intro b{font-weight:400;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.5em;text-indent:.5em;color:var(--ink);animation:inMono 1s var(--ease) both}
-@keyframes inMono{from{opacity:0;letter-spacing:.8em;text-indent:.8em}}
-body.intro-on{overflow:hidden}
+/* abertura: trava a rolagem até a joia abrir */
+body.locked{overflow:hidden}
 
 /* topo */
 .hd{position:fixed;inset:0 0 auto;z-index:100;transition:background .5s,box-shadow .5s}
@@ -92,8 +90,10 @@ body.menu-open .menu nav a{transform:none;opacity:1}
 .menu figure img{width:100%;height:100%;object-fit:cover}
 
 /* capa com rolagem: a foto abre até ocupar a tela */
-.hero{position:relative;height:230vh;--p:0}
-.hero-pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.hero{position:relative;height:100svh;min-height:560px;--p:1}
+.hero-pin{position:relative;height:100%;overflow:hidden}
+body.locked .hero{cursor:pointer}
+html.opening .hero{--p:0}
 .hero-word{position:absolute;left:0;right:0;top:53%;transform:translateY(-50%) scale(calc(1 + var(--p) * .12));text-align:center;font-weight:400;font-size:27vw;line-height:.8;letter-spacing:.01em;color:var(--ink);white-space:nowrap;opacity:calc(1 - var(--p) * 1.4)}
 .hero-word span{display:inline-block;transform:translateY(40%);opacity:0;transition:transform 1.3s var(--ease),opacity 1.3s}
 .ready .hero-word span{transform:none;opacity:1}
@@ -258,7 +258,6 @@ select.field{appearance:none;cursor:pointer;background:transparent url("data:ima
   .pv{max-width:520px}
 }
 @media(max-width:860px){
-  .hero{height:190vh}
   .hero-img{clip-path:inset(calc((1 - var(--p)) * 26svh) calc((1 - var(--p)) * 29vw))}
   .hero-word{font-size:25vw;top:50%}
   .hz{height:auto!important}
@@ -286,9 +285,7 @@ select.field{appearance:none;cursor:pointer;background:transparent url("data:ima
 }
 </style>
 </head>
-<body class="intro-on">
-
-<div id="intro" aria-hidden="true"><b>BERTA</b></div>
+<body>
 
 <header class="hd" id="hd">
   <a class="topbar js-wa" href="#" data-msg="Olá, Berta! Vim pelo site e gostaria de um orçamento.">Orçamento sem compromisso pelo WhatsApp &rarr;</a>
@@ -532,18 +529,51 @@ const $ = id => document.getElementById(id);
 $('yr').textContent = new Date().getFullYear();
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------- intro curta: só na primeira visita da sessão ---------- */
+/* ---------- abertura: BERTA com a joia pequena, só na primeira visita da sessão.
+   No primeiro gesto de rolar, a joia abre até ocupar a tela e o site fica parado
+   nessa capa; só depois a rolagem é liberada. ---------- */
+const hero = $('hero');
+const setP = p => { hero.style.setProperty('--p', p.toFixed(4)); hero.classList.toggle('on', p > .8); };
 (function(){
-  const el = $('intro');
-  const ready = () => { document.body.classList.remove('intro-on'); document.documentElement.classList.add('ready'); };
+  const ready = () => document.documentElement.classList.add('ready');
   let seen = false;
-  try { seen = sessionStorage.getItem('berta-intro') === '1'; sessionStorage.setItem('berta-intro', '1'); } catch (e) {}
-  if (seen || location.hash.length > 1 || REDUCED) { el.remove(); return requestAnimationFrame(ready); }
-  let done = false;
-  const finish = () => { if (done) return; done = true; el.classList.add('out'); ready(); setTimeout(() => el.remove(), 800); };
-  setTimeout(finish, 1100);
-  el.addEventListener('click', finish);
-  addEventListener('keydown', finish, {once:true});
+  try { seen = sessionStorage.getItem('berta-open') === '1'; } catch (e) {}
+  if (seen || location.hash.length > 1 || REDUCED || scrollY > 0) { setP(1); return requestAnimationFrame(ready); }
+
+  setP(0); requestAnimationFrame(ready);
+  document.body.classList.add('locked');
+  let state = 'intro', quiet = 0, touchY = 0;
+  const DUR = 1500, ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
+  const block = e => { if (state !== 'free') e.preventDefault(); };
+  function release(){
+    state = 'free';
+    document.body.classList.remove('locked');
+    removeEventListener('wheel', onWheel); removeEventListener('touchmove', onTouchMove); removeEventListener('keydown', onKey);
+  }
+  // espera o fim da inércia do trackpad/dedo antes de soltar a rolagem
+  const settle = () => { clearTimeout(quiet); quiet = setTimeout(release, 450); };
+  function open(instant){
+    if (state !== 'intro') return;
+    state = 'opening';
+    try { sessionStorage.setItem('berta-open', '1'); } catch (e) {}
+    if (instant) { setP(1); return release(); }
+    const t0 = performance.now();
+    (function step(now){
+      const t = Math.min(1, (now - t0) / DUR);
+      setP(ease(t));
+      if (t < 1) requestAnimationFrame(step); else { state = 'settling'; settle(); }
+    })(t0);
+  }
+  function onWheel(e){ block(e); if (state === 'intro' && e.deltaY > 0) open(); else if (state === 'settling') settle(); }
+  function onTouchMove(e){ block(e); const dy = touchY - e.touches[0].clientY; if (state === 'intro' && dy > 8) open(); else if (state === 'settling') settle(); }
+  function onKey(e){ if (['ArrowDown','PageDown',' ','End'].includes(e.key)) { e.preventDefault(); open(); } }
+  addEventListener('wheel', onWheel, {passive:false});
+  addEventListener('touchstart', e => { touchY = e.touches[0].clientY; }, {passive:true});
+  addEventListener('touchmove', onTouchMove, {passive:false});
+  addEventListener('keydown', onKey);
+  hero.addEventListener('click', () => open());
+  // um link do menu ou do topo pula a abertura na hora
+  document.addEventListener('click', e => { if (state === 'intro' && e.target.closest('a[href^="#"]:not([href="#top"]), .js-wa')) open(true); }, true);
 })();
 
 /* ---------- topo, menu, revelações, vídeos ---------- */
@@ -556,8 +586,8 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
 const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); } else v.pause(); }), {threshold:.35});
 document.querySelectorAll('video').forEach(v => vio.observe(v));
 
-/* ---------- movimento ligado à rolagem: capa e coleções ---------- */
-const hero = $('hero'), hz = $('colecoes'), track = $('hzTrack');
+/* ---------- movimento ligado à rolagem: coleções ---------- */
+const hz = $('colecoes'), track = $('hzTrack');
 const wide = matchMedia('(min-width: 861px)');
 const clamp = v => Math.max(0, Math.min(1, v));
 function sizeHz(){
@@ -568,11 +598,7 @@ let ticking = false;
 function onScroll(){
   ticking = false;
   hd.classList.toggle('s', scrollY > 20);
-  fab.classList.toggle('on', scrollY > innerHeight * 1.2);
-  const hr = hero.getBoundingClientRect();
-  const p = REDUCED ? 1 : clamp(-hr.top / (hr.height - innerHeight));
-  hero.style.setProperty('--p', p.toFixed(4));
-  hero.classList.toggle('on', p > .8);
+  fab.classList.toggle('on', scrollY > innerHeight * .8);
   if (wide.matches && !REDUCED) {
     const r = hz.getBoundingClientRect();
     const q = clamp(-r.top / (r.height - innerHeight));
