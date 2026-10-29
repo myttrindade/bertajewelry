@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="fotos/aliancas-ouro.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="fotos/anel-safira.jpg" fetchpriority="high">
 <script>/* decide já no carregamento se a abertura aparece, para a capa não piscar antes */
 try { if (sessionStorage.getItem('berta-open') !== '1' && location.hash.length < 2 && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('opening'); } catch (e) {}</script>
 <style>
@@ -99,7 +99,7 @@ body.menu-open .menu{opacity:1;visibility:visible}
 .menu .foot{display:grid;gap:12px;margin-top:28px}
 
 /* capa: abertura com o nome escrito, depois a foto ocupa o quadro */
-.hero{position:relative;height:calc(100svh - var(--top));min-height:520px;padding:0 var(--g);--p:1}
+.hero{position:relative;height:calc(100svh - var(--top));min-height:520px;--p:1}
 html.opening .hero{--p:0}
 body.locked{overflow:hidden}
 body.locked .hero{cursor:pointer}
@@ -119,13 +119,24 @@ html.opening .hero-word tspan:nth-child(5){animation-delay:.6s,1.45s}
 html.opening .hero-img{opacity:0;transition:opacity 1s ease}
 html.opening.img-in .hero-img{opacity:1}
 /* a joia entra translúcida, sem cor e desfocada sobre o nome, e ganha cor e nitidez conforme cresce */
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:55% 50%;transform:scale(calc(1.3 - var(--p) * .3));opacity:calc(.22 + var(--p) * .78);filter:grayscale(calc(1 - var(--p))) blur(calc((1 - var(--p)) * 5px))}
-.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,rgba(255,255,255,.72),rgba(255,255,255,.2) 42%,transparent 62%);opacity:var(--p)}
-.hero-cap{position:absolute;left:clamp(22px,4vw,64px);bottom:clamp(26px,7vh,70px);max-width:470px;color:var(--ink);opacity:calc((var(--p) - .62) * 3);transform:translateY(calc((1 - var(--p)) * 30px));pointer-events:none}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(calc(1.3 - var(--p) * .3));opacity:calc(.22 + var(--p) * .78);filter:grayscale(calc(1 - var(--p))) blur(calc((1 - var(--p)) * 5px))}
+.hero-img::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.38);opacity:var(--p)}
+/* texto da capa: grande, centralizado e em branco sobre a foto escurecida */
+.hero-cap{position:absolute;inset:0;z-index:1;display:grid;place-content:center;justify-items:center;gap:22px;padding:0 var(--g);text-align:center;color:#fff;opacity:calc((var(--p) - .62) * 3);transform:translateY(calc((1 - var(--p)) * 30px));pointer-events:none}
 .hero.on .hero-cap{pointer-events:auto}
-.hero-cap h2{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:600;letter-spacing:.05em;text-transform:uppercase;line-height:1.15;margin-bottom:12px}
-.hero-cap p{font-size:1.02rem;margin-bottom:24px}
-.hero-cap .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
+.hero.on .hero-cap>*{pointer-events:auto}
+.hero-cap h2{font-weight:400;font-size:clamp(3.2rem,9vw,8.6rem);line-height:.92;letter-spacing:.01em;text-transform:uppercase}
+.hero-cap h2 em{font-style:italic}
+.hero-cap p{font-size:1.1rem;max-width:34ch}
+
+/* a capa anterior, agora como bloco editorial */
+.story-in{position:relative;height:min(84svh,800px);overflow:hidden;background:var(--grey)}
+.story-in img{width:100%;height:100%;object-fit:cover;object-position:55% 50%}
+.story-in::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,rgba(255,255,255,.72),rgba(255,255,255,.2) 42%,transparent 62%)}
+.story-cap{position:absolute;z-index:1;left:clamp(22px,4vw,64px);bottom:clamp(26px,7vh,70px);max-width:470px;color:var(--ink)}
+.story-cap h2{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:600;letter-spacing:.05em;text-transform:uppercase;line-height:1.15;margin-bottom:12px}
+.story-cap p{font-size:1.02rem;margin-bottom:24px}
+.story-cap .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
 
 section{padding:clamp(70px,8vw,110px) 0}
 
@@ -160,13 +171,6 @@ section{padding:clamp(70px,8vw,110px) 0}
 .tile .txt{text-align:center;display:grid;gap:10px;justify-items:center;padding:26px 10px 0}
 
 /* campanha em tela cheia */
-.camp{position:relative;padding:0;height:min(88svh,820px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
-.camp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.camp::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.38)}
-.camp .in{position:relative;z-index:1;display:grid;gap:22px;justify-items:center;padding:0 var(--g)}
-.camp h2{font-weight:400;font-size:clamp(3.2rem,9vw,8.6rem);line-height:.92;letter-spacing:.01em;text-transform:uppercase}
-.camp h2 em{font-style:italic}
-.camp p{font-size:1.1rem;max-width:34ch}
 
 /* modelos no formato de página de produto */
 .at-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
@@ -273,8 +277,8 @@ section{padding:clamp(70px,8vw,110px) 0}
 }
 @media(max-width:560px){
   .notice{font-size:.6rem;letter-spacing:.06em}
-  .hero-cap{right:22px}
-  .hero-cap .btn{width:100%}
+  .story-cap{right:22px}
+  .story-cap .btn{width:100%}
   .quote form{flex-direction:column;gap:10px}
   .quote .field{border-right:1px solid var(--line)}
   .quote .btn{min-height:48px}
@@ -336,14 +340,11 @@ section{padding:clamp(70px,8vw,110px) 0}
   <div class="hero" id="hero">
     <div class="hero-pin">
       <svg class="hero-word" viewBox="0 0 1000 250" aria-hidden="true"><text x="500" y="218" text-anchor="middle" textLength="960" lengthAdjust="spacing"><tspan>B</tspan><tspan>E</tspan><tspan>R</tspan><tspan>T</tspan><tspan>A</tspan></text></svg>
-      <div class="hero-img"><img src="fotos/aliancas-ouro.jpg" alt="Alianças em ouro com pedras" fetchpriority="high"></div>
+      <div class="hero-img"><img src="fotos/anel-safira.jpg" alt="Anel em ouro com pedra azul e brilhantes" fetchpriority="high"></div>
       <div class="hero-cap">
-        <h2>Joias feitas para uma só história</h2>
-        <p>Alianças, anéis e pingentes desenhados sob medida, em Santos.</p>
-        <div class="acts">
-          <a class="btn" href="#modelos">Ver modelos</a>
-          <a class="u js-wa" href="#" data-msg="Olá, Berta! Vim pelo site e gostaria de um orçamento.">Orçamento no WhatsApp</a>
-        </div>
+        <h2>Feita para <em>você</em></h2>
+        <p>Escolha o modelo. Metal, pedra e gravação, a gente combina com você.</p>
+        <a class="btn white" href="#modelos">Ver modelos</a>
       </div>
     </div>
   </div>
@@ -405,13 +406,20 @@ section{padding:clamp(70px,8vw,110px) 0}
     </div>
   </section>
 
-  <!-- campanha -->
-  <section class="camp">
-    <img src="fotos/anel-safira.jpg" alt="" loading="lazy">
-    <div class="in rv">
-      <h2>Feita para <em>você</em></h2>
-      <p>Escolha o modelo. Metal, pedra e gravação, a gente combina com você.</p>
-      <a class="btn white" href="#modelos">Ver modelos</a>
+  <!-- história (a capa anterior) -->
+  <section class="story" style="padding-top:0">
+    <div class="w">
+      <div class="story-in rv">
+        <img src="fotos/aliancas-ouro.jpg" alt="Alianças em ouro com pedras" loading="lazy">
+        <div class="story-cap">
+          <h2>Joias feitas para uma só história</h2>
+          <p>Alianças, anéis e pingentes desenhados sob medida, em Santos.</p>
+          <div class="acts">
+            <a class="btn" href="#modelos">Ver modelos</a>
+            <a class="u js-wa" href="#" data-msg="Olá, Berta! Vim pelo site e gostaria de um orçamento.">Orçamento no WhatsApp</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
